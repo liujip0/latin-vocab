@@ -1,8 +1,10 @@
 import { Button, Input } from "@liujip0/components";
 import { useEffect, useRef, useState } from "react";
 import type { Word } from "~/types/words.js";
+import { genderAbbrev } from "~/util/abbrev.js";
 import removeMacrons from "~/util/removemacrons.js";
 import { useKeyDown } from "~/util/usekeydown.js";
+import Answer from "./answer.js";
 
 type LatinToEnglishProps = {
   nextQuestion: () => void;
@@ -16,7 +18,7 @@ export default function LatinToEnglish({
   macrons,
 }: LatinToEnglishProps) {
   const latinWord = {
-    noun: word.nom_sg + ", " + word.gen_sg + ", ",
+    noun: word.nom_sg + ", " + word.gen_sg + ", " + genderAbbrev(word.gender),
   }[word.part_of_speech];
 
   const [asking, setAsking] = useState(true);
@@ -67,7 +69,10 @@ export default function LatinToEnglish({
         </>
       ) : (
         <div>
-          Answer
+          <Answer
+            answer={answer}
+            correct={word.english_translation}
+          />
           <Button
             ref={continueButtonRef}
             onClick={() => {
