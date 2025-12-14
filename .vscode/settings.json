@@ -1,5 +1,15 @@
 {
-	"files.associations": {
-		"wrangler.json": "jsonc"
-	}
+  "files.associations": {
+    "wrangler.json": "jsonc"
+  },
+  "cSpell.words": [
+    "addnouns",
+    "checklogin",
+    "checktoken",
+    "getsettings",
+    "latintoenglish",
+    "managedb",
+    "removemacrons",
+    "wordlist"
+  ]
 }
