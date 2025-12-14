@@ -3,6 +3,7 @@ import Papa from "papaparse";
 import { data, useSubmit } from "react-router";
 import { cloudflareContext } from "~/context/context.js";
 import type { Noun } from "~/types/nouns.js";
+import { genderUnabbrev } from "~/util/abbrev.js";
 import type { Route } from "./+types/nouns.js";
 
 export async function action({ request, context }: Route.ActionArgs) {
@@ -19,6 +20,7 @@ export async function action({ request, context }: Route.ActionArgs) {
   return await new Promise((resolve) => {
     Papa.parse<Noun>(text, {
       header: true,
+      skipEmptyLines: true,
       complete: async (results) => {
         const deleteNouns = context
           .get(cloudflareContext)
@@ -44,7 +46,7 @@ export async function action({ request, context }: Route.ActionArgs) {
             noun.other_forms,
             noun.english_translation,
             noun.declension,
-            noun.gender,
+            genderUnabbrev(noun.gender),
             noun.chapter
           )
         );
