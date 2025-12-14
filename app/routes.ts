@@ -12,7 +12,6 @@ export default [
   route("signup", "routes/signup.tsx"),
 
   route("managedb", "routes/managedb/index.tsx", [
-    route("addnouns", "routes/managedb/addnouns.tsx"),
     route("nouns", "routes/managedb/nouns.tsx"),
   ]),
 

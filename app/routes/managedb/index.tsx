@@ -15,8 +15,7 @@ export default function ManageDB() {
   return (
     <div>
       <Link to="/">Return to Home</Link>
-      <Link to="./addnouns">Add Nouns</Link>
-      <Link to="./nouns">Manage Nouns</Link>
+      <Link to="./nouns">Nouns</Link>
       <Outlet />
     </div>
   );
