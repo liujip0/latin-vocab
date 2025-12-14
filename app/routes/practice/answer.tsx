@@ -1,4 +1,5 @@
 import { diffChars } from "diff";
+import styles from "./answer.module.css";
 
 type AnswerProps = {
   answer: string;
@@ -8,13 +9,24 @@ export default function Answer({ answer, correct }: AnswerProps) {
   const diff = diffChars(answer, correct);
 
   return (
-    <div style={{ display: "flex" }}>
-      {diff.map((change, index) => (
-        <div key={index}>
-          <div>{!change.added ? change.value : "_"}</div>
-          <div>{!change.removed ? change.value : "_"}</div>
-        </div>
-      ))}
+    <div className={styles.diffContainer + " " + styles.diffText}>
+      {diff.map((change, index) =>
+        change.value.split("").map((char, charIndex) => (
+          <div
+            key={index + " " + charIndex}
+            className={styles.diffChar}>
+            <div
+              className={
+                change.removed ? styles.diffRemoved : styles.diffOther
+              }>
+              {!change.added ? char : "_"}
+            </div>
+            <div className={change.added ? styles.diffAdded : styles.diffOther}>
+              {!change.removed ? char : "_"}
+            </div>
+          </div>
+        ))
+      )}
     </div>
   );
 }

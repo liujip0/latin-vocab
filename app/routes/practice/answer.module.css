@@ -1,0 +1,27 @@
+.diffContainer {
+  display: flex;
+}
+
+.diffText {
+  font-family: monospace;
+}
+
+.diffChar {
+  margin: 0 1px;
+  --char-padding: 1px 3px;
+}
+
+.diffAdded {
+  background-color: #00ff00;
+  padding: var(--char-padding);
+}
+
+.diffRemoved {
+  background-color: #ff4444;
+  padding: var(--char-padding);
+}
+
+.diffOther {
+  background-color: lightgray;
+  padding: var(--char-padding);
+}
