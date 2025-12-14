@@ -12,6 +12,8 @@
     "managedb",
     "papaparse",
     "removemacrons",
+    "Unabbrev",
+    "usekeydown",
     "vocablists",
     "wordlist"
   ]

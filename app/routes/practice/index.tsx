@@ -5,12 +5,14 @@ import {
   settingsContext,
   userContext,
 } from "~/context/context.js";
-import type { Noun } from "~/types/nouns.js";
+import { type Noun } from "~/types/nouns.js";
 import { QuestionTypes } from "~/types/settings.js";
 import type { Word } from "~/types/words.js";
 import removeMacrons from "~/util/removemacrons.js";
 import type { Route } from "./+types/index.js";
-import LatinToEnglish from "./latintoenglish.js";
+import EnglishToLatin from "./questiontypes/englishtolatin.js";
+import LatinToEnglish from "./questiontypes/latintoenglish.js";
+import NounGenders from "./questiontypes/noungenders.js";
 
 const authMiddleware: Route.MiddlewareFunction = async ({ context }, next) => {
   if (context.get(userContext)) {
@@ -126,17 +128,16 @@ export default function Practice({ loaderData }: Route.ComponentProps) {
               />
             ),
             english_to_latin: (
-              <LatinToEnglish
+              <EnglishToLatin
                 nextQuestion={nextQuestion}
                 word={loaderData.words[wordIndex]}
                 macrons={loaderData.macrons}
               />
             ),
             noun_genders: (
-              <LatinToEnglish
+              <NounGenders
                 nextQuestion={nextQuestion}
                 word={loaderData.words[wordIndex]}
-                macrons={loaderData.macrons}
               />
             ),
           }[questionType]

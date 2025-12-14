@@ -6,7 +6,10 @@ type AnswerProps = {
   correct: string;
 };
 export default function Answer({ answer, correct }: AnswerProps) {
-  const diff = diffChars(answer, correct);
+  const diff = diffChars(
+    answer.replaceAll(" ", "_"),
+    correct.replaceAll(" ", "_")
+  );
 
   return (
     <div className={styles.diffContainer + " " + styles.diffText}>
@@ -27,6 +30,35 @@ export default function Answer({ answer, correct }: AnswerProps) {
           </div>
         ))
       )}
+    </div>
+  );
+}
+
+export function SimpleAnswer({ answer, correct }: AnswerProps) {
+  const chars: string[] = [];
+  for (let i = 0; i < Math.max(answer.length, correct.length); i++) {
+    const answerChar = answer[i] || "_";
+    const correctChar = correct[i] || "_";
+    chars.push(answerChar + correctChar);
+  }
+
+  const answerCorrect = answer === correct;
+
+  return (
+    <div className={styles.diffContainer + " " + styles.diffText}>
+      {chars.map((char, charIndex) => (
+        <div
+          key={charIndex}
+          className={styles.diffChar}>
+          <div
+            className={!answerCorrect ? styles.diffRemoved : styles.diffOther}>
+            {char[0]}
+          </div>
+          <div className={!answerCorrect ? styles.diffAdded : styles.diffOther}>
+            {char[1]}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

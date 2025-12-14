@@ -1,24 +1,18 @@
 import { Button, Input } from "@liujip0/components";
 import { useEffect, useRef, useState } from "react";
 import type { Word } from "~/types/words.js";
-import { genderAbbrev } from "~/util/abbrev.js";
-import removeMacrons from "~/util/removemacrons.js";
+import { genderUnabbrev } from "~/util/abbrev.js";
 import { useKeyDown } from "~/util/usekeydown.js";
-import Answer from "./answer.js";
+import { SimpleAnswer } from "../answer.js";
 
-type LatinToEnglishProps = {
+type NounGendersProps = {
   nextQuestion: () => void;
 
   word: Word;
-  macrons: boolean;
 };
-export default function LatinToEnglish({
-  nextQuestion,
-  word,
-  macrons,
-}: LatinToEnglishProps) {
+export default function NounGenders({ nextQuestion, word }: NounGendersProps) {
   const latinWord = {
-    noun: word.nom_sg + ", " + word.gen_sg + ", " + genderAbbrev(word.gender),
+    noun: word.nom_sg + ", " + word.gen_sg,
   }[word.part_of_speech];
 
   const [asking, setAsking] = useState(true);
@@ -47,9 +41,9 @@ export default function LatinToEnglish({
 
   return (
     <div>
-      <div>Translate into English</div>
-      <div>{macrons ? latinWord : removeMacrons(latinWord)}</div>
-      <div>{word.part_of_speech}</div>
+      <div>Identify the gender of the noun</div>
+      <div>{latinWord}</div>
+      <div>{word.english_translation}</div>
       {asking ? (
         <>
           <Input
@@ -69,9 +63,9 @@ export default function LatinToEnglish({
         </>
       ) : (
         <div>
-          <Answer
-            answer={answer}
-            correct={word.english_translation}
+          <SimpleAnswer
+            answer={genderUnabbrev(answer)}
+            correct={word.gender}
           />
           <Button
             ref={continueButtonRef}
