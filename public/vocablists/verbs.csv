@@ -1,3 +1,18 @@
 first_sg_pres_act_ind,pres_act_inf,first_sg_prf_act_ind,prf_pass_ptcp,other_forms,english_translation,conjugation,chapter
 
+ambulō,ambulāre,ambulāvī,ambulātum,,walk,1,1
 amō,amāre,amāvī,amātum,,love,1,1
+cūrō,cūrāre,cūrāvī,cūrātum,,"care for, take care of",1,1
+sum,esse,fuī,futūrus,,be,irregular,1
+
+dēbeō,dēbēre,dēbuī,dēbitum,,"ought, must, should; owe",2,2
+exspectō,exspectāre,exspectāvī,exspectātum,,"wait for, await, expect",1,2
+habeō,habēre,habuī,habitum,,have,2,2
+habitō,habitāre,habitāvī,habitātum,,"live, dwell",1,2
+nārrō,nārrāre,nārrāvī,nārrātum,,tell,1,2
+parō,parāre,parāvī,parātum,,"prepare, get ready",1,2
+teneō,tenēre,tenuī,tentum,,hold,2,2
+videō,vidēre,vīdī,vīsum,,see,2,2
+vocō,vocāre,vocāvī,vocātum,,call,1,2
+
+timeō,timēre,timuī,--,"fear, be afraid",2,3

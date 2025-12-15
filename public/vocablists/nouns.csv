@@ -1,3 +1,26 @@
 nom_sg,gen_sg,other_forms,english_translation,declension,gender,chapter
 
 agricola,agricolae,,farmer,1,m,1
+aqua,aquae,,water,1,f,1
+āthlēta,āthlētae,,athlete,1,m,1
+fīlia,fīliae,,daughter,1,f,1
+lupa,lupae,,she-wolf,1,f,1
+nauta,nautae,,sailor,1,m,1
+poēta,poētae,,poet,1,m,1
+puella,puellae,,girl,1,f,1
+Rōma,Rōmae,,Rome,1,f,1
+terra,terrae,,land,1,f,1
+
+fābula,fābulae,,story,1,f,2
+fōrma,fōrmae,,"form, appearance",1,f,2
+patria,patriae,,fatherland,1,f,2
+
+ager,agrī,,field,2,m,3
+amīcus,amīcī,,friend,2,m,3
+animus,animī,,"spirit, soul, mind",2,m,3
+casa,casae,,"little house, cottage",1,f,3
+fīlius,fīliī,,son,2,m,3
+puer,puerī,,boy,2,m,3
+rīvus,rīvī,,"brook, stream",2,m,3
+via,viae,,road,1,f,3
+vir,virī,,man,2,m,3
