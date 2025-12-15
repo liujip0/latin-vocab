@@ -1,12 +1,19 @@
-import { Button } from "@liujip0/components";
 import Papa from "papaparse";
-import { data, useSubmit } from "react-router";
+import {
+  data,
+  UNSAFE_DataWithResponseInit,
+  type RouterContextProvider,
+} from "react-router";
 import { cloudflareContext } from "~/context/context.js";
 import type { Noun } from "~/types/nouns.js";
 import { genderUnabbrev } from "~/util/abbrev.js";
-import type { Route } from "./+types/nouns.js";
 
-export async function action({ request, context }: Route.ActionArgs) {
+export default async function addNouns(
+  request: Request,
+  context: Readonly<RouterContextProvider>
+): Promise<
+  UNSAFE_DataWithResponseInit<{ success: boolean; errorMessage?: string }>
+> {
   const url = new URL("/vocablists/nouns.csv", request.url);
   const csv = await fetch(url);
   if (!csv.ok) {
@@ -18,7 +25,7 @@ export async function action({ request, context }: Route.ActionArgs) {
 
   const text = await csv.text();
   return await new Promise((resolve) => {
-    Papa.parse<Noun>(text, {
+    Papa.parse<Omit<Noun, "id">>(text, {
       header: true,
       skipEmptyLines: true,
       complete: async (results) => {
@@ -71,29 +78,4 @@ export async function action({ request, context }: Route.ActionArgs) {
       },
     });
   });
-}
-
-export default function Nouns({ actionData }: Route.ComponentProps) {
-  const submit = useSubmit();
-
-  return (
-    <div>
-      <h1>Manage Nouns</h1>
-      <Button
-        onClick={() => {
-          submit(null, { method: "post" });
-        }}>
-        Add Nouns from CSV
-      </Button>
-      {actionData ? (
-        (actionData as Record<string, unknown>).success ? (
-          <p>Success</p>
-        ) : (
-          <p>Error</p>
-        )
-      ) : (
-        <></>
-      )}
-    </div>
-  );
 }

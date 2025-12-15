@@ -11,10 +11,7 @@ export default [
   route("login", "routes/login.tsx"),
   route("signup", "routes/signup.tsx"),
 
-  route("managedb", "routes/managedb/index.tsx", [
-    route("nouns", "routes/managedb/nouns.tsx"),
-    route("verbs", "routes/managedb/verbs.tsx"),
-  ]),
+  route("managedb", "routes/managedb/index.tsx"),
 
   ...prefix("practice", [
     index("routes/practice/index.tsx"),

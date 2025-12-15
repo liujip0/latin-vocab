@@ -12,7 +12,12 @@ import {
   settingsContext,
   userContext,
 } from "~/context/context.js";
-import { QuestionTypes, type AlphabetLetter } from "~/types/settings.js";
+import {
+  MaxChapter,
+  MinChapter,
+  QuestionTypes,
+  type AlphabetLetter,
+} from "~/types/settings.js";
 import type { Route } from "./+types/settings.js";
 import makeSettings from "./makesettings.js";
 
@@ -43,7 +48,14 @@ export async function action({ request, context }: Route.ActionArgs) {
   const input = {
     dark_mode: formData.get("dark_mode") === "true",
     macrons: formData.get("macrons") === "true",
+    adjectives: formData.get("adjectives") === "true",
+    adverbs: formData.get("adverbs") === "true",
+    conjunctions: formData.get("conjunctions") === "true",
+    interjections: formData.get("interjections") === "true",
     nouns: formData.get("nouns") === "true",
+    phrases: formData.get("phrases") === "true",
+    prepositions: formData.get("prepositions") === "true",
+    pronouns: formData.get("pronouns") === "true",
     verbs: formData.get("verbs") === "true",
     min_chapter: parseInt(formData.get("min_chapter") as string),
     max_chapter: parseInt(formData.get("max_chapter") as string),
@@ -53,14 +65,17 @@ export async function action({ request, context }: Route.ActionArgs) {
     english_to_latin: formData.get("english_to_latin") === "true",
     noun_genders: formData.get("noun_genders") === "true",
   };
-  console.log(input);
 
   let errors: Record<string, string> = {};
-  if (isNaN(input.min_chapter) || input.min_chapter < 1) {
-    errors.min_chapter = "Minimum chapter must be a number greater than 0.";
+  if (isNaN(input.min_chapter) || input.min_chapter < MinChapter) {
+    errors.min_chapter = `Minimum chapter must be a number greater than ${(
+      MinChapter - 1
+    ).toString()}.`;
   }
-  if (isNaN(input.max_chapter) || input.max_chapter > 18) {
-    errors.max_chapter = "Maximum chapter must be a number less than 19.";
+  if (isNaN(input.max_chapter) || input.max_chapter > MaxChapter) {
+    errors.max_chapter = `Maximum chapter must be a number less than ${(
+      MaxChapter + 1
+    ).toString()}.`;
   }
   if (input.min_chapter > input.max_chapter) {
     errors.min_chapter =
@@ -79,8 +94,15 @@ export async function action({ request, context }: Route.ActionArgs) {
       SET
         dark_mode = ?,
         macrons = ?,
+        adjectives = ?,
+        adverbs = ?,
+        conjunctions = ?,
+        interjections = ?,
         nouns = ?,
         verbs = ?,
+        phrases = ?,
+        prepositions = ?,
+        pronouns = ?,
         min_chapter = ?,
         max_chapter = ?,
         min_alphabet = ?,
@@ -93,7 +115,14 @@ export async function action({ request, context }: Route.ActionArgs) {
     .bind(
       input.dark_mode,
       input.macrons,
+      input.adjectives,
+      input.adverbs,
+      input.conjunctions,
+      input.interjections,
       input.nouns,
+      input.phrases,
+      input.prepositions,
+      input.pronouns,
       input.verbs,
       input.min_chapter,
       input.max_chapter,
@@ -120,15 +149,19 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
   const fetcher = useFetcher();
 
   const [minChapter, setMinChapter] = useState<string>(
-    loaderData.settings?.min_chapter?.toString() || "1"
+    loaderData.settings?.min_chapter?.toString() || MinChapter.toString()
   );
   const [maxChapter, setMaxChapter] = useState<string>(
-    loaderData.settings?.max_chapter?.toString() || "18"
+    loaderData.settings?.max_chapter?.toString() || MaxChapter.toString()
   );
 
   useEffect(() => {
-    setMinChapter(loaderData.settings?.min_chapter?.toString() || "1");
-    setMaxChapter(loaderData.settings?.max_chapter?.toString() || "18");
+    setMinChapter(
+      loaderData.settings?.min_chapter?.toString() || MinChapter.toString()
+    );
+    setMaxChapter(
+      loaderData.settings?.max_chapter?.toString() || MaxChapter.toString()
+    );
   }, [loaderData.settings]);
 
   return loaderData.settings ? (
@@ -140,6 +173,62 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
       <h1>Settings</h1>
       <div>
         <label>Parts of Speech</label>
+        <Checkbox
+          id="part-of-speech-adjective"
+          value={loaderData.settings.adjectives}
+          onChange={(value) => {
+            fetcher.submit(
+              {
+                ...loaderData.settings,
+                adjectives: value.toString(),
+              },
+              { method: "post" }
+            );
+          }}
+          label="Adjectives"
+        />
+        <Checkbox
+          id="part-of-speech-adverb"
+          value={loaderData.settings.adverbs}
+          onChange={(value) => {
+            fetcher.submit(
+              {
+                ...loaderData.settings,
+                adverbs: value.toString(),
+              },
+              { method: "post" }
+            );
+          }}
+          label="Adverbs"
+        />
+        <Checkbox
+          id="part-of-speech-conjunction"
+          value={loaderData.settings.conjunctions}
+          onChange={(value) => {
+            fetcher.submit(
+              {
+                ...loaderData.settings,
+                conjunctions: value.toString(),
+              },
+              { method: "post" }
+            );
+          }}
+          label="Conjunctions"
+        />
+        <Checkbox
+          id="part-of-speech-interjection"
+          value={loaderData.settings.interjections}
+          onChange={(value) => {
+            fetcher.submit(
+              {
+                ...loaderData.settings,
+                interjections: value.toString(),
+              },
+              { method: "post" }
+            );
+          }}
+          label="Interjections"
+        />
         <Checkbox
           id="part-of-speech-noun"
           value={loaderData.settings.nouns}
@@ -153,6 +242,48 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
             );
           }}
           label="Nouns"
+        />
+        <Checkbox
+          id="part-of-speech-phrase"
+          value={loaderData.settings.phrases}
+          onChange={(value) => {
+            fetcher.submit(
+              {
+                ...loaderData.settings,
+                phrases: value.toString(),
+              },
+              { method: "post" }
+            );
+          }}
+          label="Phrases"
+        />
+        <Checkbox
+          id="part-of-speech-preposition"
+          value={loaderData.settings.prepositions}
+          onChange={(value) => {
+            fetcher.submit(
+              {
+                ...loaderData.settings,
+                prepositions: value.toString(),
+              },
+              { method: "post" }
+            );
+          }}
+          label="Prepositions"
+        />
+        <Checkbox
+          id="part-of-speech-pronoun"
+          value={loaderData.settings.pronouns}
+          onChange={(value) => {
+            fetcher.submit(
+              {
+                ...loaderData.settings,
+                pronouns: value.toString(),
+              },
+              { method: "post" }
+            );
+          }}
+          label="Pronouns"
         />
         <Checkbox
           id="part-of-speech-verb"

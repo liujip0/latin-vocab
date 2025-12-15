@@ -1,19 +1,24 @@
 import { useEffect, useState } from "react";
 import { data, Link, redirect } from "react-router";
-import {
-  cloudflareContext,
-  settingsContext,
-  userContext,
-} from "~/context/context.js";
-import { type Noun } from "~/types/nouns.js";
+import { settingsContext, userContext } from "~/context/context.js";
 import { QuestionTypes } from "~/types/settings.js";
-import type { Verb } from "~/types/verbs.js";
-import type { Word } from "~/types/words.js";
-import removeMacrons from "~/util/removemacrons.js";
+import type {
+  Adverb,
+  Conjunction,
+  Interjection,
+  Phrase,
+  Word,
+} from "~/types/words.js";
 import type { Route } from "./+types/index.js";
 import EnglishToLatin from "./questiontypes/englishtolatin.js";
 import LatinToEnglish from "./questiontypes/latintoenglish.js";
 import NounGenders from "./questiontypes/noungenders.js";
+import getAdjectives from "./wordlist/getadjectives.js";
+import getNouns from "./wordlist/getnouns.js";
+import getPrepositions from "./wordlist/getprepositions.js";
+import getPronouns from "./wordlist/getpronouns.js";
+import getVerbs from "./wordlist/getverbs.js";
+import getWords from "./wordlist/getwords.js";
 
 const authMiddleware: Route.MiddlewareFunction = async ({ context }, next) => {
   if (context.get(userContext)) {
@@ -31,99 +36,88 @@ export async function loader({ context }: Route.LoaderArgs) {
 
   const words: Word[] = [];
 
-  if (context.get(settingsContext)!.nouns) {
-    const nouns = await context
-      .get(cloudflareContext)
-      .env.DB.prepare(
-        `SELECT
-          id,
-          nom_sg,
-          gen_sg,
-          other_forms,
-          english_translation,
-          declension,
-          gender,
-          chapter
-       FROM Nouns
-       WHERE chapter BETWEEN ? AND ?
-       ORDER BY RANDOM()
-       LIMIT 40;`
-      )
-      .bind(
-        context.get(settingsContext)!.min_chapter,
-        context.get(settingsContext)!.max_chapter
-      )
-      .run<Noun>();
-
-    if (!nouns.success) {
-      return data(
-        { success: false as const, errorMessage: "Failed to load nouns." },
-        { status: 500 }
-      );
+  if (context.get(settingsContext)!.adjectives) {
+    const adjectives = await getAdjectives(context);
+    if (!adjectives.data.success) {
+      return data(adjectives.data, { status: 500 });
+    } else {
+      words.push(...adjectives.data.words);
     }
+  }
 
-    const nounList = nouns.results.filter(
-      (noun) =>
-        removeMacrons(noun.nom_sg[0]).toUpperCase() >=
-          context.get(settingsContext)!.min_alphabet &&
-        removeMacrons(noun.nom_sg[0]).toUpperCase() <=
-          context.get(settingsContext)!.max_alphabet
-    );
+  if (context.get(settingsContext)!.adverbs) {
+    const adverbs = await getWords<Adverb>("adverbs", context);
+    if (!adverbs.data.success) {
+      return data(adverbs.data, { status: 500 });
+    } else {
+      words.push(...adverbs.data.words);
+    }
+  }
 
-    words.push(
-      ...nounList.map((noun) => ({
-        ...noun,
-        part_of_speech: "noun" as const,
-      }))
+  if (context.get(settingsContext)!.conjunctions) {
+    const conjunctions = await getWords<Conjunction>("conjunctions", context);
+    if (!conjunctions.data.success) {
+      return data(conjunctions.data, { status: 500 });
+    } else {
+      words.push(...conjunctions.data.words);
+    }
+  }
+
+  if (context.get(settingsContext)!.interjections) {
+    const interjections = await getWords<Interjection>(
+      "interjections",
+      context
     );
+    if (!interjections.data.success) {
+      return data(interjections.data, { status: 500 });
+    } else {
+      words.push(...interjections.data.words);
+    }
+  }
+
+  if (context.get(settingsContext)!.nouns) {
+    const nouns = await getNouns(context);
+    if (!nouns.data.success) {
+      return data(nouns.data, { status: 500 });
+    } else {
+      words.push(...nouns.data.words);
+    }
+  }
+
+  if (context.get(settingsContext)!.phrases) {
+    const phrases = await getWords<Phrase>("phrases", context);
+    if (!phrases.data.success) {
+      return data(phrases.data, { status: 500 });
+    } else {
+      words.push(...phrases.data.words);
+    }
+  }
+
+  if (context.get(settingsContext)!.prepositions) {
+    const prepositions = await getPrepositions(context);
+    if (!prepositions.data.success) {
+      return data(prepositions.data, { status: 500 });
+    } else {
+      words.push(...prepositions.data.words);
+    }
+  }
+
+  if (context.get(settingsContext)!.pronouns) {
+    const pronouns = await getPronouns(context);
+    if (!pronouns.data.success) {
+      return data(pronouns.data, { status: 500 });
+    } else {
+      words.push(...pronouns.data.words);
+    }
   }
 
   if (context.get(settingsContext)!.verbs) {
-    const verbs = await context
-      .get(cloudflareContext)
-      .env.DB.prepare(
-        `SELECT
-          id,
-          first_sg_pres_act_ind,
-          pres_act_inf,
-          first_sg_prf_act_ind,
-          prf_pass_ptcp,
-          other_forms,
-          english_translation,
-          conjugation,
-          chapter
-       FROM Verbs
-       WHERE chapter BETWEEN ? AND ?
-       ORDER BY RANDOM()
-       LIMIT 40;`
-      )
-      .bind(
-        context.get(settingsContext)!.min_chapter,
-        context.get(settingsContext)!.max_chapter
-      )
-      .run<Verb>();
-
-    if (!verbs.success) {
-      return data(
-        { success: false as const, errorMessage: "Failed to load nouns." },
-        { status: 500 }
-      );
+    const verbs = await getVerbs(context);
+    if (!verbs.data.success) {
+      return data(verbs.data, { status: 500 });
+    } else {
+      words.push(...verbs.data.words);
     }
-
-    const verbList = verbs.results.filter(
-      (noun) =>
-        removeMacrons(noun.first_sg_pres_act_ind[0]).toUpperCase() >=
-          context.get(settingsContext)!.min_alphabet &&
-        removeMacrons(noun.first_sg_pres_act_ind[0]).toUpperCase() <=
-          context.get(settingsContext)!.max_alphabet
-    );
-
-    words.push(
-      ...verbList.map((noun) => ({
-        ...noun,
-        part_of_speech: "verb" as const,
-      }))
-    );
   }
 
   return {
