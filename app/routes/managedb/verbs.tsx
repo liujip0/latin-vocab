@@ -2,12 +2,11 @@ import { Button } from "@liujip0/components";
 import Papa from "papaparse";
 import { data, useSubmit } from "react-router";
 import { cloudflareContext } from "~/context/context.js";
-import type { Noun } from "~/types/nouns.js";
-import { genderUnabbrev } from "~/util/abbrev.js";
+import type { Verb } from "~/types/verbs.js";
 import type { Route } from "./+types/nouns.js";
 
 export async function action({ request, context }: Route.ActionArgs) {
-  const url = new URL("/vocablists/nouns.csv", request.url);
+  const url = new URL("/vocablists/verbs.csv", request.url);
   const csv = await fetch(url);
   if (!csv.ok) {
     return data(
@@ -18,36 +17,38 @@ export async function action({ request, context }: Route.ActionArgs) {
 
   const text = await csv.text();
   return await new Promise((resolve) => {
-    Papa.parse<Noun>(text, {
+    Papa.parse<Verb>(text, {
       header: true,
       skipEmptyLines: true,
       complete: async (results) => {
-        const deleteNouns = context
+        const deleteVerbs = context
           .get(cloudflareContext)
-          .env.DB.prepare(`DELETE FROM Nouns;`);
-        await deleteNouns.run();
+          .env.DB.prepare(`DELETE FROM Verbs;`);
+        await deleteVerbs.run();
 
-        const insertNouns = context.get(cloudflareContext).env.DB.prepare(
-          `INSERT INTO Nouns
-          (nom_sg,
-            gen_sg,
+        const insertVerbs = context.get(cloudflareContext).env.DB.prepare(
+          `INSERT INTO Verbs
+          (first_sg_pres_act_ind,
+            pres_act_inf,
+            first_sg_prf_act_ind,
+            prf_pass_ptcp,
             other_forms,
             english_translation,
-            declension,
-            gender,
+            conjugation,
             chapter)
-          VALUES (?, ?, ?, ?, ?, ?, ?);`
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?);`
         );
 
-        const boundQueries = results.data.map((noun) =>
-          insertNouns.bind(
-            noun.nom_sg,
-            noun.gen_sg,
-            noun.other_forms,
-            noun.english_translation,
-            noun.declension,
-            genderUnabbrev(noun.gender),
-            noun.chapter
+        const boundQueries = results.data.map((verb) =>
+          insertVerbs.bind(
+            verb.first_sg_pres_act_ind,
+            verb.pres_act_inf,
+            verb.first_sg_prf_act_ind,
+            verb.prf_pass_ptcp,
+            verb.other_forms,
+            verb.english_translation,
+            verb.conjugation,
+            verb.chapter
           )
         );
 
@@ -73,17 +74,17 @@ export async function action({ request, context }: Route.ActionArgs) {
   });
 }
 
-export default function Nouns({ actionData }: Route.ComponentProps) {
+export default function Verbs({ actionData }: Route.ComponentProps) {
   const submit = useSubmit();
 
   return (
     <div>
-      <h1>Manage Nouns</h1>
+      <h1>Manage Verbs</h1>
       <Button
         onClick={() => {
           submit(null, { method: "post" });
         }}>
-        Add Nouns from CSV
+        Add Verbs from CSV
       </Button>
       {actionData ? (
         (actionData as Record<string, unknown>).success ? (

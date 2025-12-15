@@ -11,10 +11,12 @@ type NounGendersProps = {
   word: Word;
 };
 export default function NounGenders({ nextQuestion, word }: NounGendersProps) {
-  const latinWord = {
-    noun: word.nom_sg + ", " + word.gen_sg,
-  }[word.part_of_speech];
+  if (word.part_of_speech !== "noun") {
+    nextQuestion();
+    return null;
+  }
 
+  const latinWord = word.nom_sg + ", " + word.gen_sg;
   const [asking, setAsking] = useState(true);
   const askingRef = useRef(asking);
   useEffect(() => {

@@ -1,5 +1,7 @@
 import { Button, Input } from "@liujip0/components";
 import { useEffect, useRef, useState } from "react";
+import type { Noun } from "~/types/nouns.js";
+import type { Verb } from "~/types/verbs.js";
 import type { Word } from "~/types/words.js";
 import removeMacrons from "~/util/removemacrons.js";
 import { useKeyDown } from "~/util/usekeydown.js";
@@ -17,7 +19,10 @@ export default function EnglishToLatin({
   macrons,
 }: EnglishToLatinProps) {
   const latinWord = {
-    noun: word.nom_sg + ", " + word.gen_sg,
+    noun: `${(word as Noun).nom_sg}, ${(word as Noun).gen_sg}`,
+    verb: `${(word as Verb).first_sg_pres_act_ind}, ${
+      (word as Verb).pres_act_inf
+    }, ${(word as Verb).first_sg_prf_act_ind}, ${(word as Verb).prf_pass_ptcp}`,
   }[word.part_of_speech];
 
   const [asking, setAsking] = useState(true);

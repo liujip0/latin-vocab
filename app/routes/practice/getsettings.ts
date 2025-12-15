@@ -15,7 +15,7 @@ export default async function getSettings(
       `SELECT
         username,
         dark_mode, macrons,
-        nouns,
+        nouns, verbs,
         min_chapter, max_chapter,
         min_alphabet, max_alphabet,
         latin_to_english, english_to_latin, noun_genders
@@ -32,6 +32,7 @@ export default async function getSettings(
       dark_mode: !!settings.results[0].dark_mode,
       macrons: !!settings.results[0].macrons,
       nouns: !!settings.results[0].nouns,
+      verbs: !!settings.results[0].verbs,
       min_chapter: settings.results[0].min_chapter,
       max_chapter: settings.results[0].max_chapter,
       min_alphabet: settings.results[0].min_alphabet,

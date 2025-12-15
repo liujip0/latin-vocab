@@ -13,6 +13,7 @@ export default [
 
   route("managedb", "routes/managedb/index.tsx", [
     route("nouns", "routes/managedb/nouns.tsx"),
+    route("verbs", "routes/managedb/verbs.tsx"),
   ]),
 
   ...prefix("practice", [

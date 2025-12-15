@@ -5,6 +5,7 @@ export type Setting = {
   dark_mode: boolean;
   macrons: boolean;
   nouns: boolean;
+  verbs: boolean;
   min_chapter: number;
   max_chapter: number;
   min_alphabet: AlphabetLetter;

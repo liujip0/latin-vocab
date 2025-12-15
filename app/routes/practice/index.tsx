@@ -7,6 +7,7 @@ import {
 } from "~/context/context.js";
 import { type Noun } from "~/types/nouns.js";
 import { QuestionTypes } from "~/types/settings.js";
+import type { Verb } from "~/types/verbs.js";
 import type { Word } from "~/types/words.js";
 import removeMacrons from "~/util/removemacrons.js";
 import type { Route } from "./+types/index.js";
@@ -73,6 +74,54 @@ export async function loader({ context }: Route.LoaderArgs) {
       ...nounList.map((noun) => ({
         ...noun,
         part_of_speech: "noun" as const,
+      }))
+    );
+  }
+
+  if (context.get(settingsContext)!.verbs) {
+    const verbs = await context
+      .get(cloudflareContext)
+      .env.DB.prepare(
+        `SELECT
+          id,
+          first_sg_pres_act_ind,
+          pres_act_inf,
+          first_sg_prf_act_ind,
+          prf_pass_ptcp,
+          other_forms,
+          english_translation,
+          conjugation,
+          chapter
+       FROM Verbs
+       WHERE chapter BETWEEN ? AND ?
+       ORDER BY RANDOM()
+       LIMIT 40;`
+      )
+      .bind(
+        context.get(settingsContext)!.min_chapter,
+        context.get(settingsContext)!.max_chapter
+      )
+      .run<Verb>();
+
+    if (!verbs.success) {
+      return data(
+        { success: false as const, errorMessage: "Failed to load nouns." },
+        { status: 500 }
+      );
+    }
+
+    const verbList = verbs.results.filter(
+      (noun) =>
+        removeMacrons(noun.first_sg_pres_act_ind[0]).toUpperCase() >=
+          context.get(settingsContext)!.min_alphabet &&
+        removeMacrons(noun.first_sg_pres_act_ind[0]).toUpperCase() <=
+          context.get(settingsContext)!.max_alphabet
+    );
+
+    words.push(
+      ...verbList.map((noun) => ({
+        ...noun,
+        part_of_speech: "verb" as const,
       }))
     );
   }

@@ -44,6 +44,7 @@ export async function action({ request, context }: Route.ActionArgs) {
     dark_mode: formData.get("dark_mode") === "true",
     macrons: formData.get("macrons") === "true",
     nouns: formData.get("nouns") === "true",
+    verbs: formData.get("verbs") === "true",
     min_chapter: parseInt(formData.get("min_chapter") as string),
     max_chapter: parseInt(formData.get("max_chapter") as string),
     min_alphabet: formData.get("min_alphabet") as AlphabetLetter,
@@ -79,6 +80,7 @@ export async function action({ request, context }: Route.ActionArgs) {
         dark_mode = ?,
         macrons = ?,
         nouns = ?,
+        verbs = ?,
         min_chapter = ?,
         max_chapter = ?,
         min_alphabet = ?,
@@ -92,6 +94,7 @@ export async function action({ request, context }: Route.ActionArgs) {
       input.dark_mode,
       input.macrons,
       input.nouns,
+      input.verbs,
       input.min_chapter,
       input.max_chapter,
       input.min_alphabet,
@@ -150,6 +153,20 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
             );
           }}
           label="Nouns"
+        />
+        <Checkbox
+          id="part-of-speech-verb"
+          value={loaderData.settings.verbs}
+          onChange={(value) => {
+            fetcher.submit(
+              {
+                ...loaderData.settings,
+                verbs: value.toString(),
+              },
+              { method: "post" }
+            );
+          }}
+          label="Verbs"
         />
       </div>
       <div>
