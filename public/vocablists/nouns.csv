@@ -24,3 +24,62 @@ puer,puerī,,boy,2,m,3
 rīvus,rīvī,,"brook, stream",2,m,3
 via,viae,,road,1,f,3
 vir,virī,,man,2,m,3
+
+bellum,bellī,,war,2,n,4
+castra,castrōrum,,camp,2,n,4
+dolus,dolī,,"trickery, deception",2,m,4
+praemium,praemiī,,reward,2,n,4
+venēnum,venēnī,,poison,2,n,4
+vinculum,vinculī,,"chain, fetter",2,n,4
+
+auxilium,auxiliī,,help,2,n,5
+cōnsilium,cōnsiliī,,"plan, advice",2,n,5
+epistula,epistulae,,letter,1,f,5
+familia,familiae,,"family, household",1,f,5
+gaudium,gaudiī,,joy,2,n,5
+lacrima,lacrimae,,tear,1,f,5
+
+exemplum,exemplī,,example,2,n,6
+liber,librī,,book,2,m,6
+littera,litterae,,letter of the alphabet,1,f,6
+litterae,litterārum,,"literature, letter, epistle",1,f,6
+memoria,memoriae,,memory,1,f,6
+tenebrae,tenebrārum,,"shadows, darkness",1,f,6
+vīta,vītae,,life,1,f,6
+
+amor,amōris,,love,3,m,7
+dēliciae,dēliciārum,,"delight, pet",1,f,7
+digitus,digitī,,finger,2,m,7
+domina,dominae,,mistress,1,f,7
+gremium,gremiī,,lap,2,n,7
+oculus,oculī,,eye,2,m,7
+passer,passeris,,sparrow,3,m,7
+senex,senis,,old man,3,m,7
+soror,sorōris,,sister,3,f,7
+verbum,verbī,,word,2,n,7
+
+dux,ducis,,"leader, general",3,m,8
+fortitūdō,fortitūdinis,,courage,3,f,8
+homō,hominis,,"man, human being",3,m,8
+hominēs,hominum,,people,3,m,8
+mīles,mīlitis,,soldier,3,m,8
+ōrāculum,ōrāculī,,oracle,2,n,8
+rēx,rēgis,,king,3,m,8
+templum,templī,,temple,2,n,8
+timor,timōris,,fear,3,m,8
+
+animal,animālis,,animal,3,n,9
+arma,armōrum,,weapons,2,n,9
+caput,capitis,,head,3,n,9
+cīvis,cīvis,,citizen,3,m,9
+cīvis,cīvis,,citizen,3,f,9
+cōnsul,cōnsulis,,consul,3,m,9
+corpus,corporis,,body,3,n,9
+exemplar,exemplāris,,example,3,n,9
+mare,maris,,sea,3,n,9
+mors,mortis,,death,3,f,9
+mulier,mulieris,,woman,3,f,9
+ōrātiō,ōrātiōnis,,speech,3,f,9
+pāx,pācis,,peace,3,f,9
+tempus,temporis,,time,3,n,9
+urbs,urbis,,city,3,f,9

@@ -28,6 +28,8 @@ export default async function addNouns(
     Papa.parse<Omit<Noun, "id">>(text, {
       header: true,
       skipEmptyLines: true,
+      transformHeader: (header) => header.trim(),
+      transform: (value) => value.trim(),
       complete: async (results) => {
         const deleteNouns = context
           .get(cloudflareContext)

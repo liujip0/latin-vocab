@@ -27,6 +27,8 @@ export default async function addVerbs(
     Papa.parse<Omit<Verb, "id">>(text, {
       header: true,
       skipEmptyLines: true,
+      transformHeader: (header) => header.trim(),
+      transform: (value) => value.trim(),
       complete: async (results) => {
         const deleteVerbs = context
           .get(cloudflareContext)

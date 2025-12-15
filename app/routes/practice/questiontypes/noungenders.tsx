@@ -5,6 +5,8 @@ import { genderUnabbrev } from "~/util/abbrev.js";
 import { useKeyDown } from "~/util/usekeydown.js";
 import { SimpleAnswer } from "../answer.js";
 
+const MascOrFem = ["cīvis, cīvis"];
+
 type NounGendersProps = {
   nextQuestion: () => void;
 
@@ -67,7 +69,14 @@ export default function NounGenders({ nextQuestion, word }: NounGendersProps) {
         <div>
           <SimpleAnswer
             answer={genderUnabbrev(answer)}
-            correct={word.gender}
+            correct={
+              !MascOrFem.includes(latinWord)
+                ? word.gender
+                : genderUnabbrev(answer) === "masculine" ||
+                  genderUnabbrev(answer) === "feminine"
+                ? genderUnabbrev(answer)
+                : "masculine/feminine"
+            }
           />
           <Button
             ref={continueButtonRef}

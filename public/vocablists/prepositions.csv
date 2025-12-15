@@ -2,3 +2,14 @@ latin_form,object_case,english_translation,chapter
 
 cum,abl,with,3
 in,abl,"in, on",3
+
+ad,acc,"into, toward, to",4
+ē/ex,abl,"from, out of",4
+in,acc,"into, to, against",4
+
+ā/ab,abl,"by, from, away from",5
+dē,abl,"about, concerning, down from",5
+
+propter,acc,"because of, on account of",6
+
+contrā,acc,"against",8

@@ -27,6 +27,8 @@ export default async function addPronouns(
     Papa.parse<Omit<Pronoun, "id">>(text, {
       header: true,
       skipEmptyLines: true,
+      transformHeader: (header) => header.trim(),
+      transform: (value) => value.trim(),
       complete: async (results) => {
         const deleteNouns = context
           .get(cloudflareContext)

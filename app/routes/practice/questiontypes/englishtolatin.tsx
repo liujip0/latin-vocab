@@ -16,6 +16,8 @@ import removeMacrons from "~/util/removemacrons.js";
 import { useKeyDown } from "~/util/usekeydown.js";
 import Answer from "../answer.js";
 
+const Duplicates = ["however", "then"];
+
 type EnglishToLatinProps = {
   nextQuestion: () => void;
 
@@ -84,6 +86,9 @@ export default function EnglishToLatin({
       <div>Translate into Latin</div>
       <div>{word.english_translation}</div>
       <div>{word.part_of_speech}</div>
+      {Duplicates.includes(word.english_translation) && (
+        <div>Hint: {latinWord[0]}</div>
+      )}
       {asking ? (
         <>
           <Input

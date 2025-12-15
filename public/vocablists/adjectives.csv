@@ -1,7 +1,18 @@
 latin_form1,latin_form2,latin_form3,english_translation,declension,chapter
 
-magnus,magna,magnum,large,1,1
+armātus,armāta,armātum,armed,1,4
+bonus,bona,bonum,good,1,4
+iūstus,iūsta,iūstum,just,1,4
+magnus,magna,magnum,"large, great, important",1,4
+malus,mala,malum,bad,1,4
+praeclārus,praeclāra,praeclārum,"famous, distinguished",1,4
+Rōmānus,Rōmāna,Rōmānum,Roman,1,4
 
-ācer,ācris,ācre,"keen, fierce",33,10
-fortis,forte,,"brave, strong",32,10
-fēlīx,fēlīcis,,"fortunate, happy",31,10
+longus,longa,longum,long,1,4
+miser,misera,miserum,"wretched, sad, miserable",1,4
+pulcher,pulchra,pulchrum,"beautiful, nice",1,4
+
+multus,multa,multum,"much, many",1,6
+
+meus,mea,meum,my,1,7
+sevērus,sevēra,sevērum,"serious, strict, severe",1,7

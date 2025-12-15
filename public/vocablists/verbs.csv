@@ -3,16 +3,51 @@ first_sg_pres_act_ind,pres_act_inf,first_sg_prf_act_ind,prf_pass_ptcp,other_form
 ambulō,ambulāre,ambulāvī,ambulātum,,walk,1,1
 amō,amāre,amāvī,amātum,,love,1,1
 cūrō,cūrāre,cūrāvī,cūrātum,,"care for, take care of",1,1
-sum,esse,fuī,futūrus,,be,irregular,1
+sum,esse,fuī,--,,be,irregular,1
 
 dēbeō,dēbēre,dēbuī,dēbitum,,"ought, must, should; owe",2,2
 exspectō,exspectāre,exspectāvī,exspectātum,,"wait for, await, expect",1,2
 habeō,habēre,habuī,habitum,,have,2,2
 habitō,habitāre,habitāvī,habitātum,,"live, dwell",1,2
 nārrō,nārrāre,nārrāvī,nārrātum,,tell,1,2
-parō,parāre,parāvī,parātum,,"prepare, get ready",1,2
+parō,parāre,parāvī,parātum,,"prepare, get ready; design",1,2
 teneō,tenēre,tenuī,tentum,,hold,2,2
 videō,vidēre,vīdī,vīsum,,see,2,2
 vocō,vocāre,vocāvī,vocātum,,call,1,2
 
-timeō,timēre,timuī,--,"fear, be afraid",2,3
+timeō,timēre,timuī,--,,"fear, be afraid",2,3
+
+dō,dăre,dedī,dătum,,give,1,4
+intrō,intrāre,intrāvī,--,,enter,1,4
+iubeō,iubēre,iussī,iussum,,order ACC to INF,2,4
+
+cōgitō,cōgitāre,cōgitāvī,cōgitātum,,think,1,5
+doleō,dolēre,doluī,--,,"feel pain, be hurt",2,5
+
+doceō,docēre,docuī,doctum,,teach,2,6
+firmō,firmāre,firmāvī,firmātum,,strengthen,1,6
+iaceō,iacēre,iacuī,--,,"lie down, be inert",2,6
+iūdicō,iūdicāre,iūdicāvī,iūdicātum,,judge,1,6
+maneō,manēre,mānsī,mānsum,,remain,2,6
+possum,posse,potuī,--,,"be able, can",irregular,6
+servō,servāre,servāvī,servātum,,"save, preserve",1,6
+soleō,solēre,solitus sum,--,,"be accustomed to INF",irregular,6
+
+aestimō,aestimāre,aestimāvī,aestimātum,,"regard, esteem",1,7
+invideō,invidēre,invidī,invisum,,envy DAT,2,7
+putō,putāre,putāvī,putātum,,"think, consider",1,7
+
+dēcernō,dēcernere,dēcrēvī,dēcrētum,,"decide to INF, determine",3,8
+dīcō,dīcere,dīxī,dictum,,say,3,8
+intellegō,intellegere,intellēxī,intellēctum,,understand,3,8
+līberō,līberāre,līberāvī,līberātum,,"free ACC from ABL",1,8
+nāvigō,nāvigāre,nāvigāvī,nāvigātum,,"sail, voyage",1,8
+petō,petere,petīvī,petītum,,"seek, head for, go to, rush at",3,8
+vincō,vincere,vīcī,victum,,"conquer, defeat",3,8
+
+audiō,audīre,audiīvī,audītum,,"hear, listen",4,9
+crēdō,crēdere,crēdidī,crēditum,,believe DAT,3,9
+gerō,gerere,gessī,gestum,,carry,3,9
+sciō,scīre,scīvī,scītum,,know,4,9
+sentiō,sentīre,sēnsī,sēnsum,,feel,4,9
+veniō,venīre,vēnī,ventum,,come,4,9

@@ -28,6 +28,8 @@ export default async function addPrepositions(
     Papa.parse<Omit<Preposition, "id">>(text, {
       header: true,
       skipEmptyLines: true,
+      transformHeader: (header) => header.trim(),
+      transform: (value) => value.trim(),
       complete: async (results) => {
         const deleteVerbs = context
           .get(cloudflareContext)
