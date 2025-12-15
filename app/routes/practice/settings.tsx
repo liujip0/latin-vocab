@@ -51,6 +51,7 @@ export async function action({ request, context }: Route.ActionArgs) {
     adjectives: formData.get("adjectives") === "true",
     adverbs: formData.get("adverbs") === "true",
     conjunctions: formData.get("conjunctions") === "true",
+    enclitics: formData.get("enclitics") === "true",
     interjections: formData.get("interjections") === "true",
     nouns: formData.get("nouns") === "true",
     phrases: formData.get("phrases") === "true",
@@ -97,6 +98,7 @@ export async function action({ request, context }: Route.ActionArgs) {
         adjectives = ?,
         adverbs = ?,
         conjunctions = ?,
+        enclitics = ?,
         interjections = ?,
         nouns = ?,
         verbs = ?,
@@ -118,6 +120,7 @@ export async function action({ request, context }: Route.ActionArgs) {
       input.adjectives,
       input.adverbs,
       input.conjunctions,
+      input.enclitics,
       input.interjections,
       input.nouns,
       input.phrases,
@@ -214,6 +217,20 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
             );
           }}
           label="Conjunctions"
+        />
+        <Checkbox
+          id="part-of-speech-enclitic"
+          value={loaderData.settings.enclitics}
+          onChange={(value) => {
+            fetcher.submit(
+              {
+                ...loaderData.settings,
+                enclitics: value.toString(),
+              },
+              { method: "post" }
+            );
+          }}
+          label="Enclitics"
         />
         <Checkbox
           id="part-of-speech-interjection"

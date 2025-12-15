@@ -7,7 +7,12 @@ import {
 import { cloudflareContext } from "~/context/context.js";
 
 export default async function addWords<T>(
-  partOfSpeech: "adverbs" | "conjunctions" | "interjections" | "phrases",
+  partOfSpeech:
+    | "adverbs"
+    | "conjunctions"
+    | "enclitics"
+    | "interjections"
+    | "phrases",
   request: Request,
   context: Readonly<RouterContextProvider>
 ): Promise<

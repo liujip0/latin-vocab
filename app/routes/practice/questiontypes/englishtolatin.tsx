@@ -7,6 +7,7 @@ import type { Verb } from "~/types/verbs.js";
 import type {
   Adverb,
   Conjunction,
+  Enclitic,
   Interjection,
   Phrase,
   Word,
@@ -42,6 +43,7 @@ export default function EnglishToLatin({
     ].join(", "),
     adverb: (word as Adverb).latin_form,
     conjunction: (word as Conjunction).latin_form,
+    enclitic: (word as Enclitic).latin_form,
     interjection: (word as Interjection).latin_form,
     noun: (word as Noun).nom_sg + ", " + (word as Noun).gen_sg,
     phrase: (word as Phrase).latin_form,

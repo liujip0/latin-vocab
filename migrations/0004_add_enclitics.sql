@@ -1,0 +1,10 @@
+-- Migration number: 0004 	 2025-12-15T21:51:30.487Z
+CREATE TABLE IF NOT EXISTS Enclitics (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  latin_form TEXT NOT NULL,
+  english_translation TEXT NOT NULL,
+  chapter INTEGER
+);
+
+ALTER TABLE Settings
+ADD COLUMN enclitics BOOLEAN DEFAULT TRUE;

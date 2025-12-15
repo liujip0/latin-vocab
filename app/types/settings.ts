@@ -5,6 +5,7 @@ export type Setting = {
   adjectives: boolean;
   adverbs: boolean;
   conjunctions: boolean;
+  enclitics: boolean;
   interjections: boolean;
   nouns: boolean;
   phrases: boolean;
@@ -23,6 +24,29 @@ export type Setting = {
 export const MinChapter = 1;
 export const MaxChapter = 20;
 export const MaxQueryRows = 50;
+
+export const DefaultSettings: Setting = {
+  username: "",
+  dark_mode: false,
+  macrons: true,
+  adjectives: true,
+  adverbs: true,
+  conjunctions: true,
+  enclitics: true,
+  interjections: true,
+  nouns: true,
+  phrases: true,
+  prepositions: true,
+  pronouns: true,
+  verbs: true,
+  min_chapter: MinChapter,
+  max_chapter: MaxChapter,
+  min_alphabet: "A",
+  max_alphabet: "Z",
+  latin_to_english: true,
+  english_to_latin: true,
+  noun_genders: true,
+};
 
 export const QuestionTypes = [
   "latin_to_english",

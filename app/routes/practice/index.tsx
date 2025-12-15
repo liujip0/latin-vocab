@@ -5,6 +5,7 @@ import { QuestionTypes } from "~/types/settings.js";
 import type {
   Adverb,
   Conjunction,
+  Enclitic,
   Interjection,
   Phrase,
   Word,
@@ -60,6 +61,15 @@ export async function loader({ context }: Route.LoaderArgs) {
       return data(conjunctions.data, { status: 500 });
     } else {
       words.push(...conjunctions.data.words);
+    }
+  }
+
+  if (context.get(settingsContext)!.enclitics) {
+    const enclitics = await getWords<Enclitic>("enclitics", context);
+    if (!enclitics.data.success) {
+      return data(enclitics.data, { status: 500 });
+    } else {
+      words.push(...enclitics.data.words);
     }
   }
 

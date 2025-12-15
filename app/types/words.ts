@@ -8,6 +8,7 @@ export const PartsOfSpeech = [
   "adjective",
   "adverb",
   "conjunction",
+  "enclitic",
   "interjection",
   "noun",
   "phrase",
@@ -21,6 +22,7 @@ export type Word =
   | (Adjective & { part_of_speech: "adjective" })
   | (Adverb & { part_of_speech: "adverb" })
   | (Conjunction & { part_of_speech: "conjunction" })
+  | (Enclitic & { part_of_speech: "enclitic" })
   | (Interjection & { part_of_speech: "interjection" })
   | (Noun & { part_of_speech: "noun" })
   | (Phrase & { part_of_speech: "phrase" })
@@ -36,6 +38,13 @@ export type Adverb = {
 };
 
 export type Conjunction = {
+  id: number;
+  latin_form: string;
+  english_translation: string;
+  chapter: number;
+};
+
+export type Enclitic = {
   id: number;
   latin_form: string;
   english_translation: string;

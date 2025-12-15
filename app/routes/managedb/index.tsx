@@ -5,6 +5,7 @@ import { userContext } from "~/context/context.js";
 import type {
   Adverb,
   Conjunction,
+  Enclitic,
   Interjection,
   Phrase,
 } from "~/types/words.js";
@@ -31,6 +32,7 @@ export async function action({ request, context }: Route.ActionArgs) {
     adjectives: formData.get("adjectives") === "true",
     adverbs: formData.get("adverbs") === "true",
     conjunctions: formData.get("conjunctions") === "true",
+    enclitics: formData.get("enclitics") === "true",
     interjections: formData.get("interjections") === "true",
     nouns: formData.get("nouns") === "true",
     phrases: formData.get("phrases") === "true",
@@ -52,6 +54,11 @@ export async function action({ request, context }: Route.ActionArgs) {
   if (input.conjunctions) {
     res.conjunctions = (
       await addWords<Conjunction>("conjunctions", request, context)
+    ).init?.status;
+  }
+  if (input.enclitics) {
+    res.enclitics = (
+      await addWords<Enclitic>("enclitics", request, context)
     ).init?.status;
   }
   if (input.interjections) {
@@ -94,6 +101,7 @@ export default function ManageDB({ actionData }: Route.ComponentProps) {
   const [adjectives, setAdjectives] = useState(true);
   const [adverbs, setAdverbs] = useState(true);
   const [conjunctions, setConjunctions] = useState(true);
+  const [enclitics, setEnclitics] = useState(true);
   const [interjections, setInterjections] = useState(true);
   const [nouns, setNouns] = useState(true);
   const [phrases, setPhrases] = useState(true);
@@ -121,6 +129,12 @@ export default function ManageDB({ actionData }: Route.ComponentProps) {
         value={conjunctions}
         onChange={setConjunctions}
         label="Conjunctions"
+      />
+      <Checkbox
+        id="manage-enclitics"
+        value={enclitics}
+        onChange={setEnclitics}
+        label="Enclitics"
       />
       <Checkbox
         id="manage-interjections"
@@ -166,6 +180,7 @@ export default function ManageDB({ actionData }: Route.ComponentProps) {
               adjectives: adjectives.toString(),
               adverbs: adverbs.toString(),
               conjunctions: conjunctions.toString(),
+              enclitics: enclitics.toString(),
               interjections: interjections.toString(),
               nouns: nouns.toString(),
               phrases: phrases.toString(),

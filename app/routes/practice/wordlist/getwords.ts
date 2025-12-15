@@ -4,7 +4,12 @@ import { MaxQueryRows } from "~/types/settings.js";
 import removeMacrons from "~/util/removemacrons.js";
 
 export default async function getWords<T>(
-  partOfSpeech: "adverbs" | "conjunctions" | "interjections" | "phrases",
+  partOfSpeech:
+    | "adverbs"
+    | "conjunctions"
+    | "enclitics"
+    | "interjections"
+    | "phrases",
   context: Readonly<RouterContextProvider>
 ) {
   const tableName =
@@ -55,9 +60,15 @@ export default async function getWords<T>(
         part_of_speech: {
           adverbs: "adverb",
           conjunctions: "conjunction",
+          enclitics: "enclitic",
           interjections: "interjection",
           phrases: "phrase",
-        }[partOfSpeech] as "adverb" | "conjunction" | "interjection" | "phrase",
+        }[partOfSpeech] as
+          | "adverb"
+          | "conjunction"
+          | "enclitic"
+          | "interjection"
+          | "phrase",
       })),
     },
     { status: 200 }
