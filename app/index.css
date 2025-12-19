@@ -1,23 +1,17 @@
 :root {
-  --text-font-family: var(
-    --text-font-family-fallback
-  ); /* default: sans-serif */
+  --text-font-family: monospace; /* default: sans-serif */
   --text-body-size: var(--text-body-size-fallback); /* default: 1em */
-  --text-h1-size: var(--text-h1-size-fallback); /* default: 2em */
+  --text-h1-size: 2em; /* default: 2em */
   --text-h2-size: var(--text-h2-size-fallback); /* default: 1.5em */
   --text-label-size: var(--text-label-size-fallback); /* default: 0.9em */
   --text-helperText-size: var(
     --text-helperText-size-fallback
   ); /* default: 0.75em */
 
-  --color-primary: var(--color-primary-fallback); /* default: blue */
-  --color-primary-contrastText: var(
-    --color-primary-contrastText-fallback
-  ); /* default: white */
-  --color-secondary: var(--color-secondary-fallback); /* default: orange */
-  --color-secondary-contrastText: var(
-    --color-secondary-contrastText-fallback
-  ); /* default: white */
+  --color-primary: teal; /* default: blue */
+  --color-primary-contrastText: white; /* default: white */
+  --color-secondary: aqua; /* default: orange */
+  --color-secondary-contrastText: black; /* default: white */
   --color-background: var(--color-background-fallback); /* default: white */
   --color-background-contrastText: var(
     --color-background-contrastText-fallback
@@ -33,7 +27,7 @@
   --z-index-modal: var(--z-index-modal-fallback); /* default: 101 */
   --z-index-tooltip: var(--z-index-tooltip-fallback); /* default: 102 */
 
-  --border-radius: var(--border-radius-fallback); /* default: 0 */
+  --border-radius: 8px; /* default: 0 */
   --border-width: var(--border-width-fallback); /* default: 1px */
   --input-height: var(--input-height-fallback); /* default: calc(37.6 + 8px) */
   --hover-dim: var(--hover-dim-fallback); /* default: brightness(0.8) */

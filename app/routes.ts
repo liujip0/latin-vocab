@@ -1,20 +1,23 @@
 import {
   type RouteConfig,
   index,
+  layout,
   prefix,
   route,
 } from "@react-router/dev/routes";
 
 export default [
-  index("routes/index.tsx"),
+  layout("routes/topbar.tsx", [
+    index("routes/index.tsx"),
 
-  route("login", "routes/login.tsx"),
-  route("signup", "routes/signup.tsx"),
+    route("login", "routes/login.tsx"),
+    route("signup", "routes/signup.tsx"),
 
-  route("managedb", "routes/managedb/index.tsx"),
+    route("managedb", "routes/managedb/index.tsx"),
 
-  ...prefix("practice", [
-    index("routes/practice/index.tsx"),
-    route("settings", "routes/practice/settings.tsx"),
+    ...prefix("practice", [
+      index("routes/practice/index.tsx"),
+      route("settings", "routes/practice/settings.tsx"),
+    ]),
   ]),
 ] satisfies RouteConfig;
