@@ -1,6 +1,7 @@
 import { Button } from "@liujip0/components";
 import { Link, Outlet } from "react-router";
 import { userContext } from "~/context/context.js";
+import commonStyles from "../common.module.css";
 import type { Route } from "./+types/topbar";
 import styles from "./topbar.module.css";
 
@@ -16,7 +17,7 @@ export default function TopBar({ loaderData }: Route.ComponentProps) {
       <div className={styles.topbar}>
         <Link
           to="/"
-          className={styles.noLinkUnderline}>
+          className={commonStyles.noUnderline}>
           <h1 className={styles.title}>Latin Vocab</h1>
         </Link>
         {loaderData.user ? (
@@ -25,12 +26,12 @@ export default function TopBar({ loaderData }: Route.ComponentProps) {
           <div className={styles.topbarButtons}>
             <Link
               to="/login"
-              className={styles.noLinkUnderline}>
+              className={commonStyles.noUnderline}>
               <Button className={styles.topbarButton}>Log In</Button>
             </Link>
             <Link
               to="/signup"
-              className={styles.noLinkUnderline}>
+              className={commonStyles.noUnderline}>
               <Button className={styles.topbarButton}>Sign Up</Button>
             </Link>
           </div>
