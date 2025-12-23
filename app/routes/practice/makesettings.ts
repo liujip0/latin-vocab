@@ -26,7 +26,7 @@ export default async function makeSettings(
         min_chapter, max_chapter,
         min_alphabet, max_alphabet,
         latin_to_english, english_to_latin, noun_genders)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`
     )
     .bind(
       username,

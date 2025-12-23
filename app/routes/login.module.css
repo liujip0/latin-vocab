@@ -1,0 +1,36 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  width: 15em;
+  margin: auto;
+}
+
+.title {
+  font-family: var(--text-font-family);
+  font-size: var(--text-h1-size);
+  margin-bottom: 8px;
+}
+
+.input {
+  width: 100%;
+}
+
+.button {
+  background-color: var(--color-primary);
+  color: var(--color-primary-contrastText);
+}
+
+.errorMessage {
+  font-family: var(--text-font-family);
+  font-size: var(--text-body-size);
+
+  color: var(--color-error);
+}
+
+.text {
+  font-family: var(--text-font-family);
+  font-size: var(--text-body-size);
+}

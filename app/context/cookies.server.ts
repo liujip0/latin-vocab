@@ -2,7 +2,7 @@ import { createCookie, RouterContextProvider } from "react-router";
 import { cloudflareContext } from "./context.js";
 
 export function getSessionCookie(context: Readonly<RouterContextProvider>) {
-  return createCookie("session", {
+  return createCookie("__session", {
     sameSite: "lax",
     httpOnly: true,
     secure: true,

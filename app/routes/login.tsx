@@ -7,6 +7,7 @@ import { cloudflareContext } from "~/context/context.js";
 import { getSessionCookie } from "~/context/cookies.server.js";
 import type { User } from "~/types/users.js";
 import type { Route } from "./+types/login.js";
+import styles from "./login.module.css";
 import makeSettings from "./practice/makesettings.js";
 
 export async function action({ request, context }: Route.ActionArgs) {
@@ -130,6 +131,7 @@ export default function Login({}: Route.ComponentProps) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const usernameInputRef = useRef<HTMLInputElement>(null);
   const submitButtonRef = useRef<HTMLButtonElement>(null);
   const submitKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (
     event
@@ -140,11 +142,11 @@ export default function Login({}: Route.ComponentProps) {
   };
 
   return (
-    <div>
-      <Link to="/">Home</Link>
-      <Link to="/signup">Sign Up</Link>
-      <h1>Log In</h1>
+    <div className={styles.page}>
+      <h1 className={styles.title}>Log In</h1>
       <Input
+        className={styles.input}
+        ref={usernameInputRef}
         id="signup-username"
         value={username}
         onChange={setUsername}
@@ -153,13 +155,18 @@ export default function Login({}: Route.ComponentProps) {
         autoFocus
       />
       <Password
+        className={styles.input}
         id="signup-password"
         value={password}
         onChange={setPassword}
         label="Password"
         onKeyDown={submitKeyDown}
       />
+      {fetcher.data && !fetcher.data.success && (
+        <p className={styles.errorMessage}>{fetcher.data.errorMessage}</p>
+      )}
       <Button
+        className={styles.button}
         ref={submitButtonRef}
         onClick={() => {
           fetcher.submit(
@@ -169,12 +176,13 @@ export default function Login({}: Route.ComponentProps) {
             },
             { method: "post" }
           );
+          usernameInputRef.current?.focus();
         }}>
         Submit
       </Button>
-      {fetcher.data && !fetcher.data.success && (
-        <p>{fetcher.data.errorMessage}</p>
-      )}
+      <p className={styles.text}>
+        Don't have an account? <Link to="/signup">Sign Up</Link>.
+      </p>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 :root {
   --text-font-family: monospace; /* default: sans-serif */
   --text-body-size: var(--text-body-size-fallback); /* default: 1em */
-  --text-h1-size: 2em; /* default: 2em */
+  --text-h1-size: 2.5em; /* default: 2em */
   --text-h2-size: var(--text-h2-size-fallback); /* default: 1.5em */
   --text-label-size: var(--text-label-size-fallback); /* default: 0.9em */
   --text-helperText-size: var(
@@ -20,7 +20,7 @@
   --color-paper-contrastText: var(
     --color-paper-contrastText-fallback
   ); /* default: black */
-  --color-error: var(--color-error-fallback); /* default: red */
+  --color-error: red; /* default: red */
 
   --z-index-backdrop: var(--z-index-backdrop-fallback); /* default: 99 */
   --z-index-snackbar: var(--z-index-snackbar-fallback); /* default: 100 */

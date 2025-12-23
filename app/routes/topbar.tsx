@@ -1,5 +1,5 @@
 import { Button } from "@liujip0/components";
-import { Link, Outlet } from "react-router";
+import { Link, Outlet, useSubmit } from "react-router";
 import { userContext } from "~/context/context.js";
 import commonStyles from "../common.module.css";
 import type { Route } from "./+types/topbar";
@@ -11,7 +11,12 @@ export function loader({ context }: Route.LoaderArgs) {
   };
 }
 
-export default function TopBar({ loaderData }: Route.ComponentProps) {
+export default function TopBar({
+  loaderData,
+  actionData,
+}: Route.ComponentProps) {
+  const submit = useSubmit();
+
   return (
     <div className={styles.page}>
       <div className={styles.topbar}>
@@ -21,7 +26,19 @@ export default function TopBar({ loaderData }: Route.ComponentProps) {
           <h1 className={styles.title}>Latin Vocab</h1>
         </Link>
         {loaderData.user ? (
-          <div></div>
+          <div className={styles.topbarButtons}>
+            <Link
+              to="/logout"
+              className={commonStyles.noUnderline}>
+              <Button
+                className={styles.topbarButton}
+                onClick={() => {
+                  submit(null);
+                }}>
+                Log Out
+              </Button>
+            </Link>
+          </div>
         ) : (
           <div className={styles.topbarButtons}>
             <Link

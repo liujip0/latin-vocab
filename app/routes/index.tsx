@@ -22,7 +22,13 @@ export default function Index({ loaderData }: Route.ComponentProps) {
   return (
     <div className={styles.page}>
       {loaderData.user ? (
-        <></>
+        <>
+          <h1 className={styles.title}>Welcome to Latin Vocab!</h1>
+          <p className={styles.text}>
+            Currently logged in as: <strong>{loaderData.user.username}</strong>
+          </p>
+          <Link to="/practice">Practice</Link>
+        </>
       ) : (
         <>
           <h1 className={styles.title}>Welcome to Latin Vocab!</h1>

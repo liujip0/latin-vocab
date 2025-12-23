@@ -12,6 +12,7 @@ export default [
 
     route("login", "routes/login.tsx"),
     route("signup", "routes/signup.tsx"),
+    route("logout", "routes/logout.tsx"),
 
     route("managedb", "routes/managedb/index.tsx"),
 
