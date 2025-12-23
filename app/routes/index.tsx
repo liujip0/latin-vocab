@@ -27,7 +27,25 @@ export default function Index({ loaderData }: Route.ComponentProps) {
           <p className={styles.text}>
             Currently logged in as: <strong>{loaderData.user.username}</strong>
           </p>
-          <Link to="/practice">Practice</Link>
+          <div className={styles.linkButtons}>
+            <Link
+              to="/practice"
+              className={commonStyles.noUnderline + " " + styles.link}>
+              <Button className={styles.linkButton}>Practice</Button>
+            </Link>
+            <Link
+              to="/settings"
+              className={commonStyles.noUnderline + " " + styles.link}>
+              <Button className={styles.linkButton}>Settings</Button>
+            </Link>
+            {loaderData.user.admin && (
+              <Link
+                to="/managedb"
+                className={commonStyles.noUnderline + " " + styles.link}>
+                <Button className={styles.linkButton}>Manage DB</Button>
+              </Link>
+            )}
+          </div>
         </>
       ) : (
         <>

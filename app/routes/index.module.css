@@ -25,3 +25,23 @@
 
   margin: 16px 0;
 }
+
+.linkButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+
+  margin-top: 16px;
+}
+
+.link {
+  width: 100%;
+}
+
+.linkButton {
+  background-color: var(--color-primary);
+  color: var(--color-primary-contrastText);
+
+  width: 100%;
+}
