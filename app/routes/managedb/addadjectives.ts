@@ -14,15 +14,30 @@ export default async function addAdjectives(
 ): Promise<
   UNSAFE_DataWithResponseInit<{ success: boolean; errorMessage?: string }>
 > {
-  const url = new URL("/vocablists/adjectives.csv", request.url);
+  const url = new URL(
+    "/vocablists/adjectives.csv",
+    new URL(request.url).origin
+  );
   console.log(url.toString());
   const csv = await fetch(url, {
     method: "GET",
   });
-  // if (!csv.ok) {
-  //   console.error("Failed to fetch CSV file:", csv.statusText);
+  if (!csv.ok) {
+    console.error("Failed to fetch CSV file:", csv.statusText);
+    return data(
+      { success: false, errorMessage: "Failed to fetch CSV file." },
+      { status: 500 }
+    );
+  }
+
+  // const filePath = path.join(process.cwd(), "vocablists", "adjectives.csv");
+  // let text;
+  // try {
+  //   text = await fs.readFile(filePath, "utf-8");
+  // } catch (error) {
+  //   console.error("Failed to read CSV file from filesystem:", error);
   //   return data(
-  //     { success: false, errorMessage: "Failed to fetch CSV file." },
+  //     { success: false, errorMessage: "Failed to read CSV file." },
   //     { status: 500 }
   //   );
   // }
