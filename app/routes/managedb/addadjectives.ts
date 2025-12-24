@@ -19,13 +19,13 @@ export default async function addAdjectives(
   const csv = await fetch(url, {
     method: "GET",
   });
-  if (!csv.ok) {
-    console.error("Failed to fetch CSV file:", csv.statusText);
-    return data(
-      { success: false, errorMessage: "Failed to fetch CSV file." },
-      { status: 500 }
-    );
-  }
+  // if (!csv.ok) {
+  //   console.error("Failed to fetch CSV file:", csv.statusText);
+  //   return data(
+  //     { success: false, errorMessage: "Failed to fetch CSV file." },
+  //     { status: 500 }
+  //   );
+  // }
 
   const text = await csv.text();
   return await new Promise((resolve) => {
