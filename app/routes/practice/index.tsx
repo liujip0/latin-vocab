@@ -141,7 +141,7 @@ export async function loader({ context }: Route.LoaderArgs) {
 }
 
 export default function Practice({ loaderData }: Route.ComponentProps) {
-  if (loaderData.success) {
+  if (loaderData.success && loaderData.words.length > 0) {
     const [wordIndex, setWordIndex] = useState(0);
 
     const [questionType, setQuestionType] = useState<
@@ -198,6 +198,15 @@ export default function Practice({ loaderData }: Route.ComponentProps) {
       </div>
     );
   } else {
-    return <div>{loaderData.errorMessage}</div>;
+    if (!loaderData.success) {
+      return <div>{loaderData.errorMessage}</div>;
+    } else if (loaderData.words.length === 0) {
+      return (
+        <div>
+          <div>No words available for practice.</div>
+          <Link to="/practice/settings">Go to Settings</Link>
+        </div>
+      );
+    }
   }
 }

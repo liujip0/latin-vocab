@@ -1,4 +1,4 @@
-import { Button, Checkbox } from "@liujip0/components";
+import { Backdrop, Button, Checkbox } from "@liujip0/components";
 import { useState } from "react";
 import { data, redirect, useNavigation, useSubmit } from "react-router";
 import { cloudflareContext, userContext } from "~/context/context.js";
@@ -181,6 +181,7 @@ export default function ManageDB({ actionData }: Route.ComponentProps) {
 
   return (
     <div className={styles.page}>
+      <Backdrop open={navigation.state !== "idle"} />
       <div className={styles.partsOfSpeech}>
         <h1 className={styles.posTitle}>Parts of Speech</h1>
         <Checkbox
