@@ -7,6 +7,7 @@ import {
 import { cloudflareContext } from "~/context/context.js";
 import type { Adjective } from "~/types/adjectives.js";
 import { adjDeclensionUnabbrev } from "~/util/abbrev.js";
+import text from "../../vocablists/adjectives.csv?raw";
 
 export default async function addAdjectives(
   request: Request,
@@ -14,35 +15,6 @@ export default async function addAdjectives(
 ): Promise<
   UNSAFE_DataWithResponseInit<{ success: boolean; errorMessage?: string }>
 > {
-  const url = new URL(
-    "/vocablists/adjectives.csv",
-    new URL(request.url).origin
-  );
-  console.log(url.toString());
-  const csv = await fetch(url, {
-    method: "GET",
-  });
-  if (!csv.ok) {
-    console.error("Failed to fetch CSV file:", csv.statusText);
-    return data(
-      { success: false, errorMessage: "Failed to fetch CSV file." },
-      { status: 500 }
-    );
-  }
-
-  // const filePath = path.join(process.cwd(), "vocablists", "adjectives.csv");
-  // let text;
-  // try {
-  //   text = await fs.readFile(filePath, "utf-8");
-  // } catch (error) {
-  //   console.error("Failed to read CSV file from filesystem:", error);
-  //   return data(
-  //     { success: false, errorMessage: "Failed to read CSV file." },
-  //     { status: 500 }
-  //   );
-  // }
-
-  const text = await csv.text();
   return await new Promise((resolve) => {
     Papa.parse<Omit<Adjective, "id">>(text, {
       header: true,

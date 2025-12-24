@@ -8,9 +8,14 @@
   "compatibility_date": "2025-04-04",
   "main": "./workers/app.ts",
   "compatibility_flags": ["nodejs_compat"],
-  "vars": {
-    "VALUE_FROM_CLOUDFLARE": "Hello from Cloudflare"
-  },
+  "vars": {},
+  "rules": [
+    {
+      "type": "Text",
+      "globs": ["**/*.csv"],
+      "fallthrough": true
+    }
+  ],
   "observability": {
     "enabled": true
   },
