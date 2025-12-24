@@ -182,6 +182,7 @@ export default function ManageDB({ actionData }: Route.ComponentProps) {
   return (
     <div className={styles.page}>
       <div className={styles.partsOfSpeech}>
+        <h1 className={styles.posTitle}>Parts of Speech</h1>
         <Checkbox
           labelClassName={styles.partOfSpeech}
           id="manage-adjectives"
