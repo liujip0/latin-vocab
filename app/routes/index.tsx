@@ -34,7 +34,7 @@ export default function Index({ loaderData }: Route.ComponentProps) {
               <Button className={styles.linkButton}>Practice</Button>
             </Link>
             <Link
-              to="/settings"
+              to="/practice/settings"
               className={commonStyles.noUnderline + " " + styles.link}>
               <Button className={styles.linkButton}>Settings</Button>
             </Link>

@@ -8,9 +8,9 @@
     --text-helperText-size-fallback
   ); /* default: 0.75em */
 
-  --color-primary: teal; /* default: blue */
+  --color-primary: purple; /* default: blue */
   --color-primary-contrastText: white; /* default: white */
-  --color-secondary: aqua; /* default: orange */
+  --color-secondary: lavender; /* default: orange */
   --color-secondary-contrastText: black; /* default: white */
   --color-background: var(--color-background-fallback); /* default: white */
   --color-background-contrastText: var(
@@ -20,7 +20,10 @@
   --color-paper-contrastText: var(
     --color-paper-contrastText-fallback
   ); /* default: black */
+  --color-success: green; /* default: green */
+  --color-success-contrastText: white; /* default: white */
   --color-error: red; /* default: red */
+  --color-error-contrastText: white; /* default: white */
 
   --z-index-backdrop: var(--z-index-backdrop-fallback); /* default: 99 */
   --z-index-snackbar: var(--z-index-snackbar-fallback); /* default: 100 */

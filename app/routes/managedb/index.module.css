@@ -1,0 +1,55 @@
+.page {
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 24px;
+}
+
+.partsOfSpeech {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.partOfSpeech {
+  font-family: var(--text-font-family);
+  font-size: 1.2em;
+}
+
+.controls {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.updateVocab {
+  background-color: var(--color-primary);
+  color: var(--color-primary-contrastText);
+}
+
+.clearAllUsers {
+  background-color: var(--color-error);
+  color: var(--color-error-contrastText);
+}
+
+.status {
+  font-family: var(--text-font-family);
+  font-size: 1.2em;
+  font-weight: bold;
+
+  margin-top: 4px;
+}
+
+.success {
+  color: var(--color-success);
+}
+
+.error {
+  color: var(--color-error);
+}

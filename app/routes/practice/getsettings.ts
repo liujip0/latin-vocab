@@ -35,6 +35,10 @@ export default async function getSettings(
     .bind(context.get(userContext)!.username)
     .run<Setting>();
 
+  if (!settings.results[0]) {
+    return data(null, { status: 404 });
+  }
+
   return data(
     {
       username: settings.results[0].username,
