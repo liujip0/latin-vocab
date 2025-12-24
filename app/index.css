@@ -16,7 +16,7 @@
   --color-background-contrastText: var(
     --color-background-contrastText-fallback
   ); /* default: black */
-  --color-paper: var(--color-paper-fallback); /* default: gray */
+  --color-paper: lightgray; /* default: gray */
   --color-paper-contrastText: var(
     --color-paper-contrastText-fallback
   ); /* default: black */

@@ -1,0 +1,118 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 16px;
+}
+
+.statusContainer {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: var(--color-paper);
+  border-radius: var(--border-radius);
+
+  padding: 8px;
+}
+
+.title {
+  font-family: var(--text-font-family);
+  font-size: var(--text-h1-size);
+  font-weight: bold;
+
+  margin-left: 8px;
+}
+
+.returnToPractice {
+  background-color: var(--color-primary);
+  color: var(--color-primary-contrastText);
+
+  font-family: var(--text-font-family);
+}
+
+.status {
+  font-family: var(--text-font-family);
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.success {
+  color: var(--color-success);
+}
+
+.error {
+  color: var(--color-error);
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+.halfContainer {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.partsOfSpeech {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: auto;
+}
+
+.toggleButton {
+  font-family: var(--text-font-family);
+  font-size: 1.2em;
+
+  flex: 1;
+}
+
+.smallLabel {
+  font-family: var(--text-font-family);
+  font-size: 1.2em;
+}
+
+.largeLabel {
+  font-family: var(--text-font-family);
+  font-size: 1.5em;
+  font-weight: bold;
+
+  margin-right: auto;
+}
+
+.labelGroup {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+
+.allNoneButton {
+  font-family: var(--text-font-family);
+  font-size: var(--text-body-size);
+
+  padding: 4px 8px;
+
+  background-color: var(--color-primary);
+  color: var(--color-primary-contrastText);
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.input {
+  flex: 1;
+}
