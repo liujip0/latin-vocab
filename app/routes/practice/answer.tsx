@@ -66,10 +66,19 @@ export function SimpleAnswer({ answer, correct }: AnswerProps) {
           key={charIndex}
           className={styles.diffChar}>
           <div
-            className={!answerCorrect ? styles.diffRemoved : styles.diffOther}>
+            className={
+              (!answerCorrect ? styles.diffOther : styles.diffCorrect) +
+              " " +
+              (char[0] === "_" && styles.diffSpace)
+            }>
             {char[0]}
           </div>
-          <div className={!answerCorrect ? styles.diffAdded : styles.diffOther}>
+          <div
+            className={
+              (!answerCorrect ? styles.diffRemoved : styles.diffCorrect) +
+              " " +
+              (char[1] === "_" && styles.diffSpace)
+            }>
             {char[1]}
           </div>
         </div>
