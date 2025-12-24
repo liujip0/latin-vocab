@@ -16,7 +16,9 @@ export default async function addAdjectives(
 > {
   const url = new URL("/vocablists/adjectives.csv", request.url);
   console.log(url.toString());
-  const csv = await fetch(url);
+  const csv = await fetch(url, {
+    method: "GET",
+  });
   if (!csv.ok) {
     console.error("Failed to fetch CSV file:", csv.statusText);
     return data(
