@@ -11,6 +11,17 @@ import type { Route } from "./+types/root";
 import "./index.css";
 import styles from "./root.module.css";
 
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "Latin Vocab" },
+    {
+      name: "description",
+      content:
+        "App for practicing Latin vocab from Latin for The New Millennium textbook.",
+    },
+  ];
+}
+
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {

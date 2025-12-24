@@ -5,13 +5,6 @@ import commonStyles from "../common.module.css";
 import type { Route } from "./+types/index";
 import styles from "./index.module.css";
 
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
-}
-
 export function loader({ context }: Route.LoaderArgs) {
   return {
     user: context.get(userContext),
