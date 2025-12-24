@@ -26,6 +26,17 @@
   font-size: var(--text-body-size);
 }
 
+.questionEnglishTranslation {
+  font-family: var(--text-font-family);
+  font-size: var(--text-body-size);
+}
+
+.questionHint {
+  font-family: var(--text-font-family);
+  font-size: var(--text-body-size);
+  font-style: italic;
+}
+
 .input {
   margin-top: 16px;
 

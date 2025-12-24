@@ -48,7 +48,9 @@ export default function NounGenders({ nextQuestion, word }: NounGendersProps) {
     <div className={styles.questionContainer}>
       <div className={styles.questionType}>Identify the gender of the noun</div>
       <div className={styles.questionWord}>{latinWord}</div>
-      <div>{word.english_translation}</div>
+      <div className={styles.questionEnglishTranslation}>
+        {word.english_translation}
+      </div>
       {asking ? (
         <>
           <Input

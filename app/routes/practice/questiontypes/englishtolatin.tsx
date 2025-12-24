@@ -90,7 +90,7 @@ export default function EnglishToLatin({
       <div className={styles.questionWord}>{word.english_translation}</div>
       <div className={styles.questionPartOfSpeech}>{word.part_of_speech}</div>
       {Duplicates.includes(word.english_translation) && (
-        <div>Hint: {latinWord[0]}</div>
+        <div className={styles.questionHint}>Hint: {latinWord[0]}</div>
       )}
       {asking ? (
         <>
