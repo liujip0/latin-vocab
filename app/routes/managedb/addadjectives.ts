@@ -15,8 +15,10 @@ export default async function addAdjectives(
   UNSAFE_DataWithResponseInit<{ success: boolean; errorMessage?: string }>
 > {
   const url = new URL("/vocablists/adjectives.csv", request.url);
+  console.log(url.toString());
   const csv = await fetch(url);
   if (!csv.ok) {
+    console.error("Failed to fetch CSV file:", csv.statusText);
     return data(
       { success: false, errorMessage: "Failed to fetch CSV file." },
       { status: 500 }
@@ -65,6 +67,7 @@ export default async function addAdjectives(
         if (queryResult.every((res) => res.success)) {
           resolve(data({ success: true }, { status: 200 }));
         } else {
+          console.error("Database insertion failed:", queryResult);
           resolve(
             data(
               { success: false, errorMessage: "Database insertion failed." },
@@ -74,6 +77,7 @@ export default async function addAdjectives(
         }
       },
       error: (error: any) => {
+        console.error("CSV parsing failed:", error);
         resolve(data({ success: false, error: error }, { status: 500 }));
       },
     });
