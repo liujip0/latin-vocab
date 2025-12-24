@@ -17,12 +17,18 @@ export function genderUnabbrev(abbrev: string): NounGender | string {
   switch (abbrev) {
     case "m.":
     case "m":
+    case "masc":
+    case "masc.":
       return "masculine";
     case "f.":
     case "f":
+    case "fem":
+    case "fem.":
       return "feminine";
     case "n.":
     case "n":
+    case "neut":
+    case "neut.":
       return "neuter";
     default:
       return abbrev;
@@ -38,12 +44,15 @@ export function adjDeclensionUnabbrev(
       return "1/2";
     case "3rd 1-ending":
     case "31":
+    case "3-1":
       return "3-1ending";
     case "3rd 2-ending":
     case "32":
+    case "3-2":
       return "3-2ending";
     case "3rd 3-ending":
     case "33":
+    case "3-3":
       return "3-3ending";
     default:
       return abbrev;
@@ -60,14 +69,12 @@ export function oopAbbrev(oop: PrepositionObjectCase): string {
 }
 
 export function oopUnabbrev(abbrev: string): PrepositionObjectCase | string {
-  switch (abbrev) {
+  switch (abbrev.toUpperCase()) {
     case "ACC":
-    case "acc":
-    case "Acc":
+    case "ACC.":
       return "accusative";
     case "ABL":
-    case "abl":
-    case "Abl":
+    case "ABL.":
       return "ablative";
     default:
       return abbrev;
