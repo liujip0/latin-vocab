@@ -16,6 +16,7 @@ import { oopAbbrev } from "~/util/abbrev.js";
 import removeMacrons from "~/util/removemacrons.js";
 import { useKeyDown } from "~/util/usekeydown.js";
 import Answer from "../answer.js";
+import styles from "./questions.module.css";
 
 const Duplicates = ["however", "then"];
 
@@ -84,16 +85,17 @@ export default function EnglishToLatin({
   });
 
   return (
-    <div>
-      <div>Translate into Latin</div>
-      <div>{word.english_translation}</div>
-      <div>{word.part_of_speech}</div>
+    <div className={styles.questionContainer}>
+      <div className={styles.questionType}>Translate into Latin</div>
+      <div className={styles.questionWord}>{word.english_translation}</div>
+      <div className={styles.questionPartOfSpeech}>{word.part_of_speech}</div>
       {Duplicates.includes(word.english_translation) && (
         <div>Hint: {latinWord[0]}</div>
       )}
       {asking ? (
         <>
           <Input
+            className={styles.input}
             id="latin-to-english-input"
             value={answer}
             onChange={setAnswer}
@@ -101,6 +103,7 @@ export default function EnglishToLatin({
             autoFocus
           />
           <Button
+            className={styles.submitButton}
             ref={submitButtonRef}
             onClick={() => {
               setAsking(false);
@@ -109,12 +112,13 @@ export default function EnglishToLatin({
           </Button>
         </>
       ) : (
-        <div>
+        <>
           <Answer
             answer={macrons ? answer : removeMacrons(answer)}
             correct={macrons ? latinWord : removeMacrons(latinWord)}
           />
           <Button
+            className={styles.continueButton}
             ref={continueButtonRef}
             onClick={() => {
               setAsking(true);
@@ -123,7 +127,7 @@ export default function EnglishToLatin({
             }}>
             Continue
           </Button>
-        </div>
+        </>
       )}
     </div>
   );

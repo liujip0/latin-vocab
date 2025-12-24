@@ -1,3 +1,4 @@
+import { Button } from "@liujip0/components";
 import { useEffect, useState } from "react";
 import { data, Link, redirect } from "react-router";
 import { settingsContext, userContext } from "~/context/context.js";
@@ -10,7 +11,9 @@ import type {
   Phrase,
   Word,
 } from "~/types/words.js";
+import commonStyles from "../../common.module.css";
 import type { Route } from "./+types/index.js";
+import styles from "./index.module.css";
 import EnglishToLatin from "./questiontypes/englishtolatin.js";
 import LatinToEnglish from "./questiontypes/latintoenglish.js";
 import NounGenders from "./questiontypes/noungenders.js";
@@ -167,10 +170,7 @@ export default function Practice({ loaderData }: Route.ComponentProps) {
     };
 
     return (
-      <div>
-        <Link to="/">Home</Link>
-        <Link to="/practice/settings">Settings</Link>
-
+      <div className={styles.page}>
         {
           {
             latin_to_english: (
@@ -180,6 +180,7 @@ export default function Practice({ loaderData }: Route.ComponentProps) {
                 macrons={loaderData.macrons}
               />
             ),
+
             english_to_latin: (
               <EnglishToLatin
                 nextQuestion={nextQuestion}
@@ -187,6 +188,7 @@ export default function Practice({ loaderData }: Route.ComponentProps) {
                 macrons={loaderData.macrons}
               />
             ),
+
             noun_genders: (
               <NounGenders
                 nextQuestion={nextQuestion}
@@ -195,6 +197,15 @@ export default function Practice({ loaderData }: Route.ComponentProps) {
             ),
           }[questionType]
         }
+        <div className={styles.controls}>
+          <Link
+            className={commonStyles.noUnderline}
+            to="/practice/settings">
+            <Button className={styles.settings}>
+              <span className="material-symbols-outlined">settings</span>
+            </Button>
+          </Link>
+        </div>
       </div>
     );
   } else {

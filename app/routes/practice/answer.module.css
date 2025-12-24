@@ -1,9 +1,12 @@
 .diffContainer {
   display: flex;
+
+  margin-top: 16px;
 }
 
 .diffText {
   font-family: monospace;
+  font-size: 1.3em;
 }
 
 .diffChar {
@@ -12,16 +15,25 @@
 }
 
 .diffAdded {
-  background-color: #00ff00;
+  background-color: #ff4444; /* #00ff00 */
   padding: var(--char-padding);
 }
 
 .diffRemoved {
-  background-color: #ff4444;
+  background-color: #ff4444; /* #ff4444 */
+  padding: var(--char-padding);
+}
+
+.diffCorrect {
+  background-color: #00ff00;
   padding: var(--char-padding);
 }
 
 .diffOther {
   background-color: lightgray;
   padding: var(--char-padding);
+}
+
+.diffSpace {
+  color: transparent;
 }

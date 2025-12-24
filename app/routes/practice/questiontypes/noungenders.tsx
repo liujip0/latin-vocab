@@ -4,6 +4,7 @@ import type { Word } from "~/types/words.js";
 import { genderUnabbrev } from "~/util/abbrev.js";
 import { useKeyDown } from "~/util/usekeydown.js";
 import { SimpleAnswer } from "../answer.js";
+import styles from "./questions.module.css";
 
 const MascOrFem = ["cīvis, cīvis"];
 
@@ -44,13 +45,14 @@ export default function NounGenders({ nextQuestion, word }: NounGendersProps) {
   });
 
   return (
-    <div>
-      <div>Identify the gender of the noun</div>
-      <div>{latinWord}</div>
+    <div className={styles.questionContainer}>
+      <div className={styles.questionType}>Identify the gender of the noun</div>
+      <div className={styles.questionWord}>{latinWord}</div>
       <div>{word.english_translation}</div>
       {asking ? (
         <>
           <Input
+            className={styles.input}
             id="latin-to-english-input"
             value={answer}
             onChange={setAnswer}
@@ -58,6 +60,7 @@ export default function NounGenders({ nextQuestion, word }: NounGendersProps) {
             autoFocus
           />
           <Button
+            className={styles.submitButton}
             ref={submitButtonRef}
             onClick={() => {
               setAsking(false);
@@ -66,7 +69,7 @@ export default function NounGenders({ nextQuestion, word }: NounGendersProps) {
           </Button>
         </>
       ) : (
-        <div>
+        <>
           <SimpleAnswer
             answer={genderUnabbrev(answer)}
             correct={
@@ -79,6 +82,7 @@ export default function NounGenders({ nextQuestion, word }: NounGendersProps) {
             }
           />
           <Button
+            className={styles.continueButton}
             ref={continueButtonRef}
             onClick={() => {
               setAsking(true);
@@ -87,7 +91,7 @@ export default function NounGenders({ nextQuestion, word }: NounGendersProps) {
             }}>
             Continue
           </Button>
-        </div>
+        </>
       )}
     </div>
   );

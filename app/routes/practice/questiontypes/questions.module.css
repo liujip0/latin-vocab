@@ -1,0 +1,46 @@
+.questionContainer {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+}
+
+.questionType {
+  font-family: var(--text-font-family);
+  font-size: var(--text-body-size);
+  font-weight: bold;
+}
+
+.questionWord {
+  font-family: var(--text-font-family);
+  font-size: 1.75em;
+}
+
+.questionPartOfSpeech {
+  font-family: var(--text-font-family);
+  font-size: var(--text-body-size);
+}
+
+.input {
+  margin-top: 16px;
+
+  font-size: 1.5em;
+}
+
+.submitButton {
+  margin-top: 16px;
+  background-color: var(--color-primary);
+  color: var(--color-primary-contrastText);
+}
+
+.continueButton {
+  margin-top: 16px;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  border: var(--border-width) solid var(--color-primary);
+}

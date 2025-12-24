@@ -20,11 +20,26 @@ export default function Answer({ answer, correct }: AnswerProps) {
             className={styles.diffChar}>
             <div
               className={
-                change.removed ? styles.diffRemoved : styles.diffOther
+                (change.removed
+                  ? styles.diffRemoved
+                  : change.added
+                  ? styles.diffOther
+                  : styles.diffCorrect) +
+                " " +
+                ((char === "_" || change.added) && styles.diffSpace)
               }>
               {!change.added ? char : "_"}
             </div>
-            <div className={change.added ? styles.diffAdded : styles.diffOther}>
+            <div
+              className={
+                (change.added
+                  ? styles.diffAdded
+                  : change.removed
+                  ? styles.diffOther
+                  : styles.diffCorrect) +
+                " " +
+                ((char === "_" || change.removed) && styles.diffSpace)
+              }>
               {!change.removed ? char : "_"}
             </div>
           </div>

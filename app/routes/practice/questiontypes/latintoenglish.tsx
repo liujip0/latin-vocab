@@ -16,6 +16,7 @@ import { genderAbbrev, oopAbbrev } from "~/util/abbrev.js";
 import removeMacrons from "~/util/removemacrons.js";
 import { useKeyDown } from "~/util/usekeydown.js";
 import Answer from "../answer.js";
+import styles from "./questions.module.css";
 
 type LatinToEnglishProps = {
   nextQuestion: () => void;
@@ -34,11 +35,15 @@ export default function LatinToEnglish({
   }
 
   const latinWord = {
-    adjective: [
-      (word as Adjective).latin_form1,
-      (word as Adjective).latin_form2,
-      (word as Adjective).latin_form3,
-    ].join(", "),
+    adjective: (word as Adjective).latin_form3
+      ? [
+          (word as Adjective).latin_form1,
+          (word as Adjective).latin_form2,
+          (word as Adjective).latin_form3,
+        ].join(", ")
+      : (word as Adjective).latin_form1 +
+        ", " +
+        (word as Adjective).latin_form2,
     adverb: (word as Adverb).latin_form,
     conjunction: (word as Conjunction).latin_form,
     enclitic: (word as Enclitic).latin_form,
@@ -86,13 +91,16 @@ export default function LatinToEnglish({
   });
 
   return (
-    <div>
-      <div>Translate into English</div>
-      <div>{macrons ? latinWord : removeMacrons(latinWord)}</div>
-      <div>{word.part_of_speech}</div>
+    <div className={styles.questionContainer}>
+      <div className={styles.questionType}>Translate into English</div>
+      <div className={styles.questionWord}>
+        {macrons ? latinWord : removeMacrons(latinWord)}
+      </div>
+      <div className={styles.questionPartOfSpeech}>{word.part_of_speech}</div>
       {asking ? (
         <>
           <Input
+            className={styles.input}
             id="latin-to-english-input"
             value={answer}
             onChange={setAnswer}
@@ -100,6 +108,7 @@ export default function LatinToEnglish({
             autoFocus
           />
           <Button
+            className={styles.submitButton}
             ref={submitButtonRef}
             onClick={() => {
               setAsking(false);
@@ -108,12 +117,13 @@ export default function LatinToEnglish({
           </Button>
         </>
       ) : (
-        <div>
+        <>
           <Answer
             answer={answer}
             correct={word.english_translation}
           />
           <Button
+            className={styles.continueButton}
             ref={continueButtonRef}
             onClick={() => {
               setAsking(true);
@@ -122,7 +132,7 @@ export default function LatinToEnglish({
             }}>
             Continue
           </Button>
-        </div>
+        </>
       )}
     </div>
   );
