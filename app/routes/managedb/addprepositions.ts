@@ -7,23 +7,13 @@ import {
 import { cloudflareContext } from "~/context/context.js";
 import type { Preposition } from "~/types/prepositions.js";
 import { oopUnabbrev } from "~/util/abbrev.js";
+import text from "../../vocablists/prepositions.csv?raw";
 
 export default async function addPrepositions(
-  request: Request,
   context: Readonly<RouterContextProvider>
 ): Promise<
   UNSAFE_DataWithResponseInit<{ success: boolean; errorMessage?: string }>
 > {
-  const url = new URL("/vocablists/prepositions.csv", request.url);
-  const csv = await fetch(url);
-  if (!csv.ok) {
-    return data(
-      { success: false, errorMessage: "Failed to fetch CSV file." },
-      { status: 500 }
-    );
-  }
-
-  const text = await csv.text();
   return await new Promise((resolve) => {
     Papa.parse<Omit<Preposition, "id">>(text, {
       header: true,

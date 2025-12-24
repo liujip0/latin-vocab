@@ -6,23 +6,13 @@ import {
 } from "react-router";
 import { cloudflareContext } from "~/context/context.js";
 import type { Verb } from "~/types/verbs.js";
+import text from "../../vocablists/verbs.csv?raw";
 
 export default async function addVerbs(
-  request: Request,
   context: Readonly<RouterContextProvider>
 ): Promise<
   UNSAFE_DataWithResponseInit<{ success: boolean; errorMessage?: string }>
 > {
-  const url = new URL("/vocablists/verbs.csv", request.url);
-  const csv = await fetch(url);
-  if (!csv.ok) {
-    return data(
-      { success: false, errorMessage: "Failed to fetch CSV file." },
-      { status: 500 }
-    );
-  }
-
-  const text = await csv.text();
   return await new Promise((resolve) => {
     Papa.parse<Omit<Verb, "id">>(text, {
       header: true,

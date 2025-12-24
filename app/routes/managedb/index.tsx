@@ -53,46 +53,40 @@ export async function action({ request, context }: Route.ActionArgs) {
       const res: Record<string, number | undefined> = {};
 
       if (input.adjectives) {
-        res.adjectives = (await addAdjectives(request, context)).init?.status;
+        res.adjectives = (await addAdjectives(context)).init?.status;
       }
       if (input.adverbs) {
-        res.adverbs = (
-          await addWords<Adverb>("adverbs", request, context)
-        ).init?.status;
+        res.adverbs = (await addWords<Adverb>("adverbs", context)).init?.status;
       }
       if (input.conjunctions) {
         res.conjunctions = (
-          await addWords<Conjunction>("conjunctions", request, context)
+          await addWords<Conjunction>("conjunctions", context)
         ).init?.status;
       }
       if (input.enclitics) {
         res.enclitics = (
-          await addWords<Enclitic>("enclitics", request, context)
+          await addWords<Enclitic>("enclitics", context)
         ).init?.status;
       }
       if (input.interjections) {
         res.interjections = (
-          await addWords<Interjection>("interjections", request, context)
+          await addWords<Interjection>("interjections", context)
         ).init?.status;
       }
       if (input.nouns) {
-        res.nouns = (await addNouns(request, context)).init?.status;
+        res.nouns = (await addNouns(context)).init?.status;
       }
       if (input.phrases) {
-        res.phrases = (
-          await addWords<Phrase>("phrases", request, context)
-        ).init?.status;
+        res.phrases = (await addWords<Phrase>("phrases", context)).init?.status;
       }
       if (input.prepositions) {
-        res.prepositions = (
-          await addPrepositions(request, context)
-        ).init?.status;
+        res.prepositions = (await addPrepositions(context)).init?.status;
       }
       if (input.pronouns) {
-        res.pronouns = (await addPronouns(request, context)).init?.status;
+        res.pronouns = (await addPronouns(context)).init?.status;
       }
       if (input.verbs) {
-        res.verbs = (await addVerbs(request, context)).init?.status;
+        res.verbs = (await addVerbs(context)).init?.status;
       }
 
       return data(

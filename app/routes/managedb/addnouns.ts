@@ -7,23 +7,13 @@ import {
 import { cloudflareContext } from "~/context/context.js";
 import type { Noun } from "~/types/nouns.js";
 import { genderUnabbrev } from "~/util/abbrev.js";
+import text from "../../vocablists/nouns.csv?raw";
 
 export default async function addNouns(
-  request: Request,
   context: Readonly<RouterContextProvider>
 ): Promise<
   UNSAFE_DataWithResponseInit<{ success: boolean; errorMessage?: string }>
 > {
-  const url = new URL("/vocablists/nouns.csv", request.url);
-  const csv = await fetch(url);
-  if (!csv.ok) {
-    return data(
-      { success: false, errorMessage: "Failed to fetch CSV file." },
-      { status: 500 }
-    );
-  }
-
-  const text = await csv.text();
   return await new Promise((resolve) => {
     Papa.parse<Omit<Noun, "id">>(text, {
       header: true,

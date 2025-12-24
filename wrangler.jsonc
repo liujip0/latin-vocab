@@ -9,13 +9,6 @@
   "main": "./workers/app.ts",
   "compatibility_flags": ["nodejs_compat"],
   "vars": {},
-  "rules": [
-    {
-      "type": "Text",
-      "globs": ["**/*.csv"],
-      "fallthrough": true
-    }
-  ],
   "observability": {
     "enabled": true
   },

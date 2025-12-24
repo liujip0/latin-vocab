@@ -10,7 +10,6 @@ import { adjDeclensionUnabbrev } from "~/util/abbrev.js";
 import text from "../../vocablists/adjectives.csv?raw";
 
 export default async function addAdjectives(
-  request: Request,
   context: Readonly<RouterContextProvider>
 ): Promise<
   UNSAFE_DataWithResponseInit<{ success: boolean; errorMessage?: string }>

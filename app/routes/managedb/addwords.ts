@@ -5,6 +5,11 @@ import {
   type RouterContextProvider,
 } from "react-router";
 import { cloudflareContext } from "~/context/context.js";
+import adverbs from "../../vocablists/adverbs.csv?raw";
+import conjunctions from "../../vocablists/conjunctions.csv?raw";
+import enclitics from "../../vocablists/enclitics.csv?raw";
+import interjections from "../../vocablists/interjections.csv?raw";
+import phrases from "../../vocablists/phrases.csv?raw";
 
 export default async function addWords<T>(
   partOfSpeech:
@@ -13,23 +18,21 @@ export default async function addWords<T>(
     | "enclitics"
     | "interjections"
     | "phrases",
-  request: Request,
   context: Readonly<RouterContextProvider>
 ): Promise<
   UNSAFE_DataWithResponseInit<{ success: boolean; errorMessage?: string }>
 > {
-  const url = new URL(`/vocablists/${partOfSpeech}.csv`, request.url);
-  const csv = await fetch(url);
-  if (!csv.ok) {
-    return data(
-      { success: false, errorMessage: "Failed to fetch CSV file." },
-      { status: 500 }
-    );
-  }
+  const text = {
+    adverbs,
+    conjunctions,
+    enclitics,
+    interjections,
+    phrases,
+  }[partOfSpeech];
 
   const tableName =
     partOfSpeech.charAt(0).toUpperCase() + partOfSpeech.slice(1);
-  const text = await csv.text();
+
   return await new Promise((resolve) => {
     Papa.parse<Omit<T, "id">>(text, {
       header: true,

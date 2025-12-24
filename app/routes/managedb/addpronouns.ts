@@ -6,23 +6,13 @@ import {
 } from "react-router";
 import { cloudflareContext } from "~/context/context.js";
 import type { Pronoun } from "~/types/pronoun.js";
+import text from "../../vocablists/pronouns.csv?raw";
 
 export default async function addPronouns(
-  request: Request,
   context: Readonly<RouterContextProvider>
 ): Promise<
   UNSAFE_DataWithResponseInit<{ success: boolean; errorMessage?: string }>
 > {
-  const url = new URL("/vocablists/pronouns.csv", request.url);
-  const csv = await fetch(url);
-  if (!csv.ok) {
-    return data(
-      { success: false, errorMessage: "Failed to fetch CSV file." },
-      { status: 500 }
-    );
-  }
-
-  const text = await csv.text();
   return await new Promise((resolve) => {
     Papa.parse<Omit<Pronoun, "id">>(text, {
       header: true,
