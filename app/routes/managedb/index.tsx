@@ -101,8 +101,16 @@ export async function action({ request, context }: Route.ActionArgs) {
             (acc, key) => acc && res[key] === 200,
             true
           ),
+          statuses: res,
         },
-        { status: 200 }
+        {
+          status: Object.keys(res).reduce(
+            (acc, key) => acc && res[key] === 200,
+            true
+          )
+            ? 200
+            : 500,
+        }
       );
     }
     case "clear-vocab": {
