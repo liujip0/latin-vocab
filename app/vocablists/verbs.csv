@@ -68,7 +68,7 @@ relinquō,relinquere,relīquī,relictum,,"leave behind, abandon",3,11
 
 cōnsūmō,cōnsūmere,cōnsūmpsī,cōnsūmptum,,consume,3,12
 faciō,facere,fēcī,factum,,"do, make",3io,12
-inquit,--,--,--,,he/she says/said,irregular,12
+inquam,--,--,--,inquit,say/says/said,irregular,12
 occīdō,occīdere,occīdī,occīsum,,kill,3,12
 ostendō,ostendere,ostendī,ostentum,,show,3,12
 pōnō,pōnere,posuī,positum,,"put, place",3,12
@@ -86,3 +86,6 @@ conveniō,convenīre,convēnī,conventum,,meet,4,14
 fluō,fluere,flūxī,fluxum,,flow,3,14
 sēparō,sēparāre,sēparāvī,sēparātum,,separate,1,14
 tangō,tangere,tetigī,tāctum,,touch,3,14
+
+neglegō,neglegere,neglēxī,neglēctum,,neglect,3,15
+stō,stāre,stetī,statum,,stand,1,15
