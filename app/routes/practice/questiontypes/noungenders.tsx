@@ -6,7 +6,12 @@ import { useKeyDown } from "~/util/usekeydown.js";
 import { SimpleAnswer } from "../answer.js";
 import styles from "./questions.module.css";
 
-const MascOrFem = ["cīvis, cīvis", "parēns, parentis", "diēs, diēī"];
+const MascOrFem = [
+  "cīvis, cīvis",
+  "parēns, parentis",
+  "diēs, diēī",
+  "adulēscēns, adulēscentis",
+];
 
 type NounGendersProps = {
   nextQuestion: () => void;
