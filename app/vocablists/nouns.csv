@@ -125,7 +125,7 @@ caelum,caelī,,"sky, heaven, weather",2,n,16
 causa,causae,,"cause, reason",1,f,16
 cinis,cineris,,ash,3,m,16
 clādēs,clādis,,disaster,3,f,16
-classis,classis,,"fleet, class (of people)",3,f,16
+classis,classis,,"fleet, class of people",3,f,16
 fēmina,fēminae,,woman,1,f,16
 fūmus,fūmī,,smoke,2,m,16
 incendium,incendiī,,"conflagration, eruption",2,n,16
@@ -135,3 +135,17 @@ mōns,montis,,mountain,3,m,16
 nāvis,nāvis,,ship,3,f,16
 nūbēs,nūbis,,cloud,3,f,16
 pars,partis,,part,3,f,16
+
+cornū,cornūs,,horn,4,n,17
+dormus,dormūs,,"house, home",4,f,17
+imperātor,imperātōris,,"general, emperor",3,m,17
+impetus,impetūs,,"impetus, force, attack",4,m,17
+initium,initiī,,beginning,2,n,17
+iussus,iussūs,,order,4,m,17
+locus,locī,,place,2,m,17
+locī,locōrum,,passages of a book,2,m,17
+loca,locōrum,,geographical places,2,n,17
+manus,manūs,,hand,4,f,17
+mūrus,mūrī,,wall,2,m,17
+tumultus,tumultūs,,"uproar, confusion",4,m,17
+ventus,ventī,,wind,2,m,17
