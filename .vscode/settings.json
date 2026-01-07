@@ -33,5 +33,6 @@
     "usekeydown",
     "vocablists",
     "wordlist"
-  ]
+  ],
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }

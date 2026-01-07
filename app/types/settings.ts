@@ -22,7 +22,7 @@ export type Setting = {
 };
 
 export const MinChapter = 1;
-export const MaxChapter = 20;
+export const MaxChapter = 21;
 export const MaxQueryRows = 50;
 
 export const DefaultSettings: Setting = {
