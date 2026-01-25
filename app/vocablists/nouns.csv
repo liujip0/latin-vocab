@@ -156,7 +156,7 @@ diēs,diēī,,day,5,f,18
 faciēs,faciēī,,face,5,f,18
 fātum,fātī,,"fate, destiny",2,n,18
 marītus,maritī,,husband,2,m,18
-merīdiēs,merīdiēī,,midday,5,m,18
+merīdiēs,merīdiēī,,"south, midday",5,m,18
 pater,patris,,father,3,m,18
 rēs,reī,,"thing, matter",5,f,18
 somnus,somnī,,sleep,2,m,18
@@ -186,3 +186,13 @@ dīvitiae,dīvitiārum,,"wealth, riches",1,f,21
 fortūna,fortūnae,,"fortune, the goddess Fortune",1,f,21
 honor,honōris,,"honor, public office or distinction",3,m,21
 rota,rotae,,wheel,1,f,21
+
+gēns,gentis,,"tribe, population",3,f,22
+incola,incolae,,inhabitant,1,m,22
+īnsula,īnsulae,,island,1,f,22
+mōs,mōris,,"custom, habit",3,m,22
+mōrēs,mōrum,,morals,3,m,22
+mundus,mundī,,world,2,m,22
+ortus,ortūs,,"rising, beginning, origin",4,m,22
+piscis,piscis,,fish,3,m,22
+sōl,sōlis,,sun,3,m,22
