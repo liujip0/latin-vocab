@@ -15,7 +15,8 @@ import {
   userContext,
 } from "~/context/context.js";
 import {
-  MaxChapter,
+  Book1MaxChapter,
+  Book2MaxChapter,
   MinChapter,
   QuestionTypes,
   type AlphabetLetter,
@@ -72,15 +73,43 @@ export async function action({ request, context }: Route.ActionArgs) {
   };
 
   let errors: Record<string, string> = {};
-  if (isNaN(input.min_chapter) || input.min_chapter < MinChapter) {
-    errors.min_chapter = `Minimum chapter must be a number greater than ${(
+  if (isNaN(input.min_chapter)) {
+    errors.min_chapter = "Minimum chapter must be a number.";
+  }
+  if (isNaN(input.max_chapter)) {
+    errors.max_chapter = "Maximum chapter must be a number.";
+  }
+  if (input.min_chapter < MinChapter) {
+    errors.min_chapter = `Minimum chapter must be greater than ${(
       MinChapter - 1
     ).toString()}.`;
   }
-  if (isNaN(input.max_chapter) || input.max_chapter > MaxChapter) {
-    errors.max_chapter = `Maximum chapter must be a number less than ${(
-      MaxChapter + 1
+  if (input.max_chapter < MinChapter) {
+    errors.max_chapter = `Maximum chapter must be greater than ${(
+      MinChapter - 1
     ).toString()}.`;
+  }
+  if (input.min_chapter > Book2MaxChapter + Book1MaxChapter) {
+    if (input.min_chapter <= Book1MaxChapter) {
+      errors.min_chapter = `Minimum chapter must be less than ${
+        Book1MaxChapter + 1
+      } for Book 1.`;
+    } else {
+      errors.min_chapter = `Minimum chapter must be less than ${(
+        Book2MaxChapter + 1
+      ).toString()} for Book 2.`;
+    }
+  }
+  if (input.max_chapter > Book2MaxChapter + Book1MaxChapter) {
+    if (input.max_chapter <= Book1MaxChapter) {
+      errors.max_chapter = `Maximum chapter must be less than ${
+        Book1MaxChapter + 1
+      } for Book 1.`;
+    } else {
+      errors.max_chapter = `Maximum chapter must be less than ${(
+        Book2MaxChapter + 1
+      ).toString()} for Book 2.`;
+    }
   }
   if (input.min_chapter > input.max_chapter) {
     errors.min_chapter =
@@ -161,17 +190,50 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
   const [minChapter, setMinChapter] = useState<string>(
     loaderData.settings?.min_chapter?.toString() || MinChapter.toString()
   );
+  const [minChapterBook, setMinChapterBook] = useState<1 | 2>(1);
   const [maxChapter, setMaxChapter] = useState<string>(
-    loaderData.settings?.max_chapter?.toString() || MaxChapter.toString()
+    loaderData.settings?.max_chapter?.toString() || Book2MaxChapter.toString()
   );
+  const [maxChapterBook, setMaxChapterBook] = useState<1 | 2>(2);
 
   useEffect(() => {
-    setMinChapter(
-      loaderData.settings?.min_chapter?.toString() || MinChapter.toString()
-    );
-    setMaxChapter(
-      loaderData.settings?.max_chapter?.toString() || MaxChapter.toString()
-    );
+    if (
+      loaderData.settings?.min_chapter &&
+      loaderData.settings.min_chapter <= Book1MaxChapter
+    ) {
+      setMinChapter(loaderData.settings.min_chapter.toString());
+      setMinChapterBook(1);
+    } else if (
+      loaderData.settings?.min_chapter &&
+      loaderData.settings.min_chapter > Book1MaxChapter
+    ) {
+      setMinChapter(
+        (loaderData.settings.min_chapter - Book1MaxChapter).toString()
+      );
+      setMinChapterBook(2);
+    } else {
+      setMinChapter(MinChapter.toString());
+      setMinChapterBook(1);
+    }
+
+    if (
+      loaderData.settings?.max_chapter &&
+      loaderData.settings.max_chapter <= Book1MaxChapter
+    ) {
+      setMaxChapter(loaderData.settings.max_chapter.toString());
+      setMaxChapterBook(1);
+    } else if (
+      loaderData.settings?.max_chapter &&
+      loaderData.settings.max_chapter > Book1MaxChapter
+    ) {
+      setMaxChapter(
+        (loaderData.settings.max_chapter - Book1MaxChapter).toString()
+      );
+      setMaxChapterBook(2);
+    } else {
+      setMaxChapter(Book2MaxChapter.toString());
+      setMaxChapterBook(2);
+    }
   }, [loaderData.settings]);
 
   return loaderData.settings ? (
@@ -410,50 +472,124 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
           <div>
             <label className={styles.largeLabel}>Chapter</label>
             <div className={styles.inputGroup}>
-              <Input
-                className={styles.input}
-                id="min-chapter"
-                type="number"
-                value={minChapter === "0" ? "" : minChapter}
-                onChange={(value) => {
-                  setMinChapter(value === "" ? "0" : value);
-                  if (!isNaN(parseInt(value === "" ? "0" : value))) {
-                    fetcher.submit(
-                      {
-                        ...loaderData.settings,
-                        min_chapter: value === "" ? "0" : value,
-                      },
-                      { method: "post" }
-                    );
-                  }
-                }}
-                label="Min"
-                labelClassName={styles.smallLabel}
-                error={!!fetcher.data?.errors?.min_chapter}
-                helperText={fetcher.data?.errors?.min_chapter}
-              />
-              <Input
-                className={styles.input}
-                id="max-chapter"
-                type="number"
-                value={maxChapter === "0" ? "" : maxChapter}
-                onChange={(value) => {
-                  setMaxChapter(value === "" ? "0" : value);
-                  if (!isNaN(parseInt(value === "" ? "0" : value))) {
-                    fetcher.submit(
-                      {
-                        ...loaderData.settings,
-                        max_chapter: value === "" ? "0" : value,
-                      },
-                      { method: "post" }
-                    );
-                  }
-                }}
-                label="Max"
-                labelClassName={styles.smallLabel}
-                error={!!fetcher.data?.errors?.max_chapter}
-                helperText={fetcher.data?.errors?.max_chapter}
-              />
+              <div className={styles.chapterGroup}>
+                <Input
+                  className={styles.input}
+                  id="min-chapter"
+                  type="number"
+                  value={minChapter === "0" ? "" : minChapter}
+                  onChange={(value) => {
+                    setMinChapter(value === "" ? "0" : value);
+                    if (!isNaN(parseInt(value === "" ? "0" : value))) {
+                      fetcher.submit(
+                        {
+                          ...loaderData.settings,
+                          min_chapter:
+                            value === ""
+                              ? 0
+                              : parseInt(value) +
+                                (minChapterBook === 1 ? 0 : Book1MaxChapter),
+                        },
+                        { method: "post" }
+                      );
+                    }
+                  }}
+                  label="Min"
+                  labelClassName={styles.smallLabel}
+                  error={!!fetcher.data?.errors?.min_chapter}
+                  helperText={fetcher.data?.errors?.min_chapter}
+                />
+                <ToggleButtonGroup
+                  value={minChapterBook.toString()}
+                  onChange={(value) => {
+                    setMinChapterBook(parseInt(value) as 1 | 2);
+                    if (
+                      !isNaN(parseInt(minChapter === "" ? "0" : minChapter))
+                    ) {
+                      fetcher.submit(
+                        {
+                          ...loaderData.settings,
+                          min_chapter:
+                            minChapter === ""
+                              ? 0
+                              : parseInt(minChapter) +
+                                (value === "1" ? 0 : Book1MaxChapter),
+                        },
+                        { method: "post" }
+                      );
+                    }
+                  }}>
+                  <ToggleButton
+                    value="1"
+                    className={styles.chapterBookSelect}>
+                    Book 1
+                  </ToggleButton>
+                  <ToggleButton
+                    value="2"
+                    className={styles.chapterBookSelect}>
+                    Book 2
+                  </ToggleButton>
+                </ToggleButtonGroup>
+              </div>
+              <div className={styles.chapterGroup}>
+                <Input
+                  className={styles.input}
+                  id="max-chapter"
+                  type="number"
+                  value={maxChapter === "0" ? "" : maxChapter}
+                  onChange={(value) => {
+                    setMaxChapter(value === "" ? "0" : value);
+                    if (!isNaN(parseInt(value === "" ? "0" : value))) {
+                      fetcher.submit(
+                        {
+                          ...loaderData.settings,
+                          max_chapter:
+                            value === ""
+                              ? 0
+                              : parseInt(value) +
+                                (maxChapterBook === 1 ? 0 : Book1MaxChapter),
+                        },
+                        { method: "post" }
+                      );
+                    }
+                  }}
+                  label="Max"
+                  labelClassName={styles.smallLabel}
+                  error={!!fetcher.data?.errors?.max_chapter}
+                  helperText={fetcher.data?.errors?.max_chapter}
+                />
+                <ToggleButtonGroup
+                  value={maxChapterBook.toString()}
+                  onChange={(value) => {
+                    setMaxChapterBook(parseInt(maxChapter) as 1 | 2);
+                    if (
+                      !isNaN(parseInt(maxChapter === "" ? "0" : maxChapter))
+                    ) {
+                      fetcher.submit(
+                        {
+                          ...loaderData.settings,
+                          max_chapter:
+                            maxChapter === ""
+                              ? 0
+                              : parseInt(maxChapter) +
+                                (value === "1" ? 0 : Book1MaxChapter),
+                        },
+                        { method: "post" }
+                      );
+                    }
+                  }}>
+                  <ToggleButton
+                    value="1"
+                    className={styles.chapterBookSelect}>
+                    Book 1
+                  </ToggleButton>
+                  <ToggleButton
+                    value="2"
+                    className={styles.chapterBookSelect}>
+                    Book 2
+                  </ToggleButton>
+                </ToggleButtonGroup>
+              </div>
             </div>
           </div>
           <div>
