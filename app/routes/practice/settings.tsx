@@ -137,10 +137,10 @@ export async function action({ request, context }: Route.ActionArgs) {
         enclitics = ?,
         interjections = ?,
         nouns = ?,
-        verbs = ?,
         phrases = ?,
         prepositions = ?,
         pronouns = ?,
+        verbs = ?,
         min_chapter = ?,
         max_chapter = ?,
         min_alphabet = ?,
@@ -323,7 +323,7 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
                 fetcher.submit(
                   {
                     ...loaderData.settings,
-                    adjectives: value.toString(),
+                    adjectives: value,
                   },
                   { method: "post" }
                 );
@@ -338,7 +338,7 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
                 fetcher.submit(
                   {
                     ...loaderData.settings,
-                    adverbs: value.toString(),
+                    adverbs: value,
                   },
                   { method: "post" }
                 );
@@ -353,7 +353,7 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
                 fetcher.submit(
                   {
                     ...loaderData.settings,
-                    conjunctions: value.toString(),
+                    conjunctions: value,
                   },
                   { method: "post" }
                 );
@@ -368,7 +368,7 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
                 fetcher.submit(
                   {
                     ...loaderData.settings,
-                    enclitics: value.toString(),
+                    enclitics: value,
                   },
                   { method: "post" }
                 );
@@ -383,7 +383,7 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
                 fetcher.submit(
                   {
                     ...loaderData.settings,
-                    interjections: value.toString(),
+                    interjections: value,
                   },
                   { method: "post" }
                 );
@@ -398,7 +398,7 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
                 fetcher.submit(
                   {
                     ...loaderData.settings,
-                    nouns: value.toString(),
+                    nouns: value,
                   },
                   { method: "post" }
                 );
@@ -413,7 +413,7 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
                 fetcher.submit(
                   {
                     ...loaderData.settings,
-                    phrases: value.toString(),
+                    phrases: value,
                   },
                   { method: "post" }
                 );
@@ -428,7 +428,7 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
                 fetcher.submit(
                   {
                     ...loaderData.settings,
-                    prepositions: value.toString(),
+                    prepositions: value,
                   },
                   { method: "post" }
                 );
@@ -443,7 +443,7 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
                 fetcher.submit(
                   {
                     ...loaderData.settings,
-                    pronouns: value.toString(),
+                    pronouns: value,
                   },
                   { method: "post" }
                 );
@@ -455,10 +455,16 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
               id="part-of-speech-verb"
               value={loaderData.settings.verbs}
               onChange={(value) => {
+                console.log(value);
+                console.log(loaderData.settings);
+                console.log({
+                  ...loaderData.settings,
+                  verbs: value,
+                });
                 fetcher.submit(
                   {
                     ...loaderData.settings,
-                    verbs: value.toString(),
+                    verbs: value,
                   },
                   { method: "post" }
                 );
