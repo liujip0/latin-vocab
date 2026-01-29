@@ -22,7 +22,8 @@ export type Setting = {
 };
 
 export const MinChapter = 1;
-export const MaxChapter = 21;
+export const Book1MaxChapter = 21;
+export const Book2MaxChapter = 1;
 export const MaxQueryRows = 50;
 
 export const DefaultSettings: Setting = {
@@ -40,7 +41,7 @@ export const DefaultSettings: Setting = {
   pronouns: true,
   verbs: true,
   min_chapter: MinChapter,
-  max_chapter: MaxChapter,
+  max_chapter: Book2MaxChapter,
   min_alphabet: "A",
   max_alphabet: "Z",
   latin_to_english: true,

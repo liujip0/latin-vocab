@@ -169,6 +169,29 @@ export default function Practice({ loaderData }: Route.ComponentProps) {
       );
     };
 
+    useEffect(() => {
+      switch (questionType) {
+        case "english_to_latin": {
+          if (loaderData.words[wordIndex].part_of_speech === "pronoun") {
+            nextQuestion();
+          }
+          break;
+        }
+        case "latin_to_english": {
+          if (loaderData.words[wordIndex].part_of_speech === "pronoun") {
+            nextQuestion();
+          }
+          break;
+        }
+        case "noun_genders": {
+          if (loaderData.words[wordIndex].part_of_speech !== "noun") {
+            nextQuestion();
+          }
+          break;
+        }
+      }
+    }, [questionType, wordIndex]);
+
     return (
       <div className={styles.page}>
         {

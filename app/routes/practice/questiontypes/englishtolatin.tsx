@@ -32,7 +32,6 @@ export default function EnglishToLatin({
   macrons,
 }: EnglishToLatinProps) {
   if (word.part_of_speech === "pronoun") {
-    nextQuestion();
     return null;
   }
 

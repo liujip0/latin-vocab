@@ -20,7 +20,6 @@ type NounGendersProps = {
 };
 export default function NounGenders({ nextQuestion, word }: NounGendersProps) {
   if (word.part_of_speech !== "noun") {
-    nextQuestion();
     return null;
   }
 
