@@ -47,7 +47,7 @@ vincō,vincere,vīcī,victum,,"conquer, defeat",3,8
 
 audiō,audīre,audiīvī,audītum,,"hear, listen",4,9
 crēdō,crēdere,crēdidī,crēditum,,believe DAT,3,9
-gerō,gerere,gessī,gestum,,carry,3,9
+gerō,gerere,gessī,gestum,,"carry; wear",3,9
 sciō,scīre,scīvī,scītum,,know,4,9
 sentiō,sentīre,sēnsī,sēnsum,,feel,4,9
 veniō,venīre,vēnī,ventum,,come,4,9
@@ -141,3 +141,6 @@ gignō,gignere,genuī,genitum,,"produce, give birth",3,22
 inveniō,invenīre,invēnī,inventum,,"come upon, find",4,22
 occupō,occupāre,occupāvī,occupātum,,occupy,1,22
 prōmittō,prōmittere,prōmīsī,prōmissum,,promise,3,22
+
+sinō,sinere,sīvī,situm,,allow ACC to INF,3,23
+valeō,valēre,valuī,--,,be in good health,2,23
