@@ -11,6 +11,7 @@ const MascOrFem = [
   "parēns, parentis",
   "diēs, diēī",
   "adulēscēns, adulēscentis",
+  "coniūnx, coniungis",
 ];
 
 type NounGendersProps = {
@@ -55,7 +56,7 @@ export default function NounGenders({ nextQuestion, word }: NounGendersProps) {
       <div className={styles.questionEnglishTranslation}>
         {word.english_translation}
       </div>
-      {asking ? (
+      {asking ?
         <>
           <Input
             className={styles.input}
@@ -74,17 +75,17 @@ export default function NounGenders({ nextQuestion, word }: NounGendersProps) {
             Submit
           </Button>
         </>
-      ) : (
-        <>
+      : <>
           <SimpleAnswer
             answer={genderUnabbrev(answer)}
             correct={
-              !MascOrFem.includes(latinWord)
-                ? word.gender
-                : genderUnabbrev(answer) === "masculine" ||
-                  genderUnabbrev(answer) === "feminine"
-                ? genderUnabbrev(answer)
-                : "masculine/feminine"
+              !MascOrFem.includes(latinWord) ? word.gender
+              : (
+                genderUnabbrev(answer) === "masculine" ||
+                genderUnabbrev(answer) === "feminine"
+              ) ?
+                genderUnabbrev(answer)
+              : "masculine/feminine"
             }
           />
           <Button
@@ -98,7 +99,7 @@ export default function NounGenders({ nextQuestion, word }: NounGendersProps) {
             Continue
           </Button>
         </>
-      )}
+      }
     </div>
   );
 }
