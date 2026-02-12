@@ -131,7 +131,7 @@ dēscendō,dēscendere,dēscendī,dēscēnsum,,descend,3,21
 errō,errāre,errāvī,errātum,,"wander, make a mistake",1,21
 mūtō,mūtāre,mūtāvī,mūtātum,,change,1,21
 possideō,possidēre,possēdī,possessum,,possess,2,21
-recipiō,recipere,recēpī,receptum,,take back,3io,21
+recipiō,recipere,recēpī,receptum,,"take back; receive",3io,21
 reprehendō,reprehendere,reprehendī,reprehēnsum,,"blame, rebuke",3,21
 tollō,tollere,sustulī,sublātum,,"lift up, raise; destroy",3,21
 versō,versāre,versāvī,versātum,,turn,1,21
@@ -143,10 +143,19 @@ occupō,occupāre,occupāvī,occupātum,,occupy,1,22
 prōmittō,prōmittere,prōmīsī,prōmissum,,promise,3,22
 
 sinō,sinere,sīvī,situm,,allow ACC to INF,3,23
-valeō,valēre,valuī,--,,be in good health,2,23
+valeō,valēre,valuī,--,,"be able to INF; be in good health",2,23
 
 discō,discere,didicī,--,,learn,3,24
 iungō,iungere,iūnxī,iūnctum,,join,3,24
 pariō,parere,peperī,partum,,give birth to,3io,24
 perdō,perdere,perdidī,perditum,,"lose, waste",3,24
 scrībō,scrībere,scrīpsī,scrīptum,,write,3,24
+
+aperiō,aperīre,aperuī,apertum,,open,4,25
+coepī,coepisse,coeptum,,,begin INF,irregular,25
+dēfendō,dēfendere,dēfendī,dēfēnsum,,defend,3,25
+ēdō,ēdere,ēdidī,ēditum,,"produce, give forth",3,25
+furō,furere,furuī,--,,"rage, be insane",3,25
+invādō,invādere,invāsī,--,,"burst in",3,25
+parcō,parcere,pepercī,--,,to spare DAT,3,25
+resistō,resistere,restitī,--,,to resist DAT,3,25
