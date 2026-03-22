@@ -157,5 +157,9 @@ dēfendō,dēfendere,dēfendī,dēfēnsum,,defend,3,25
 ēdō,ēdere,ēdidī,ēditum,,"produce, give forth",3,25
 furō,furere,furuī,--,,"rage, be insane",3,25
 invādō,invādere,invāsī,--,,"burst in",3,25
-parcō,parcere,pepercī,--,,to spare DAT,3,25
-resistō,resistere,restitī,--,,to resist DAT,3,25
+parcō,parcere,pepercī,--,,spare DAT,3,25
+resistō,resistere,restitī,--,,resist DAT,3,25
+,,,,,,,
+bibō,bibere,bibī,--,,drink,3,26
+ōrō,ōrāre,ōrāvī,ōrātum,,"ask, entreat",1,26
+placeō,placēre,placuī,placitum,,"please, be agreeable to DAT",2,26
