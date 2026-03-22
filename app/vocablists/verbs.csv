@@ -1,10 +1,10 @@
 first_sg_pres_act_ind,pres_act_inf,first_sg_prf_act_ind,prf_pass_ptcp,other_forms,english_translation,conjugation,chapter
-
+,,,,,,,
 ambulō,ambulāre,ambulāvī,ambulātum,,walk,1,1
 amō,amāre,amāvī,amātum,,love,1,1
 cūrō,cūrāre,cūrāvī,cūrātum,,"care for, take care of",1,1
 sum,esse,fuī,--,,be,irregular,1
-
+,,,,,,,
 dēbeō,dēbēre,dēbuī,dēbitum,,"ought, must, should; owe",2,2
 exspectō,exspectāre,exspectāvī,exspectātum,,"wait for, await, expect",1,2
 habeō,habēre,habuī,habitum,,have,2,2
@@ -14,16 +14,16 @@ parō,parāre,parāvī,parātum,,"prepare, get ready; design",1,2
 teneō,tenēre,tenuī,tentum,,hold,2,2
 videō,vidēre,vīdī,vīsum,,see,2,2
 vocō,vocāre,vocāvī,vocātum,,call,1,2
-
+,,,,,,,
 timeō,timēre,timuī,--,,"fear, be afraid",2,3
-
+,,,,,,,
 dō,dăre,dedī,dătum,,give,1,4
 intrō,intrāre,intrāvī,--,,enter,1,4
 iubeō,iubēre,iussī,iussum,,order ACC to INF,2,4
-
+,,,,,,,
 cōgitō,cōgitāre,cōgitāvī,cōgitātum,,think,1,5
 doleō,dolēre,doluī,--,,"feel pain, be hurt",2,5
-
+,,,,,,,
 doceō,docēre,docuī,doctum,,teach,2,6
 firmō,firmāre,firmāvī,firmātum,,strengthen,1,6
 iaceō,iacēre,iacuī,--,,"lie down, be inert",2,6
@@ -32,11 +32,11 @@ maneō,manēre,mānsī,mānsum,,remain,2,6
 possum,posse,potuī,--,,"be able, can",irregular,6
 servō,servāre,servāvī,servātum,,"save, preserve",1,6
 soleō,solēre,solitus sum,--,,"be accustomed to INF",irregular,6
-
+,,,,,,,
 aestimō,aestimāre,aestimāvī,aestimātum,,"regard, esteem",1,7
 invideō,invidēre,invidī,invisum,,envy DAT,2,7
 putō,putāre,putāvī,putātum,,"think, consider",1,7
-
+,,,,,,,
 dēcernō,dēcernere,dēcrēvī,dēcrētum,,"decide to INF, determine",3,8
 dīcō,dīcere,dīxī,dictum,,say,3,8
 intellegō,intellegere,intellēxī,intellēctum,,understand,3,8
@@ -44,14 +44,14 @@ līberō,līberāre,līberāvī,līberātum,,"free ACC from ABL",1,8
 nāvigō,nāvigāre,nāvigāvī,nāvigātum,,"sail, voyage",1,8
 petō,petere,petīvī,petītum,,"seek, head for, go to, rush at",3,8
 vincō,vincere,vīcī,victum,,"conquer, defeat",3,8
-
+,,,,,,,
 audiō,audīre,audiīvī,audītum,,"hear, listen",4,9
 crēdō,crēdere,crēdidī,crēditum,,believe DAT,3,9
 gerō,gerere,gessī,gestum,,"carry; wear",3,9
 sciō,scīre,scīvī,scītum,,know,4,9
 sentiō,sentīre,sēnsī,sēnsum,,feel,4,9
 veniō,venīre,vēnī,ventum,,come,4,9
-
+,,,,,,,
 aedificō,aedificāre,aedificāvī,aedificātum,,build,1,10
 capiō,capere,cēpī,captum,,"take, adopt, capture",3io,10
 cupiō,cupere,cupīvī,cupītum,,"desire, want",3io,10
@@ -59,41 +59,41 @@ dēleō,dēlēre,dēlēvī,dēlētum,,destroy,2,10
 fugiō,fugere,fūgī,--,,"flee, run away",3io,10
 moveō,movēre,mōvī,mōtum,,move,2,10
 pugnō,pugnāre,pugnāvī,pugnātum,,fight,1,10
-
+,,,,,,,
 agō,agere,ēgī,āctum,,"drive, lead, do, behave",3,11
 ārdeō,ārdēre,ārsī,--,,"burn, be on fire",2,11
 conspiciō,cōnspicere,cōnspexī,cōnspectum,,"look at, observe",3io,11
 mittō,mittere,mīsī,missum,,send,3,11
 relinquō,relinquere,relīquī,relictum,,"leave behind, abandon",3,11
-
+,,,,,,,
 cōnsūmō,cōnsūmere,cōnsūmpsī,cōnsūmptum,,consume,3,12
 faciō,facere,fēcī,factum,,"do, make",3io,12
 inquam,--,--,--,inquit,say/says/said,irregular,12
 occīdō,occīdere,occīdī,occīsum,,kill,3,12
 ostendō,ostendere,ostendī,ostentum,,show,3,12
 pōnō,pōnere,posuī,positum,,"put, place",3,12
-
+,,,,,,,
 discēdō,discēdere,discessī,discessum,,"leave, go away",3,13
 dūcō,dūcere,dūxī,ductum,,lead,3,13
 licet,--,--,--,,it is allowed/permitted for DAT to INF,irregular,13
 nōlō,--,--,--,,"not want, be unwilling",irregular,13
 respondeō,respondēre,respondī,respōnsum,,answer,2,13
 rogō,rogāre,rogāvī,rogātum,,ask,1,13
-
+,,,,,,,
 cadō,cadere,cecidī,cāsum,,fall,3,14
 comedō,comedere,comēdī,comēsum,,eat,3,14
 conveniō,convenīre,convēnī,conventum,,meet,4,14
 fluō,fluere,flūxī,fluxum,,flow,3,14
 sēparō,sēparāre,sēparāvī,sēparātum,,separate,1,14
 tangō,tangere,tetigī,tāctum,,touch,3,14
-
+,,,,,,,
 neglegō,neglegere,neglēxī,neglēctum,,neglect,3,15
 stō,stāre,stetī,statum,,stand,1,15
-
+,,,,,,,
 legō,legere,lēgī,lēctum,,"read, choose",3,16
 opprimō,opprimere,oppressī,oppressum,,"overwhelm, suppress",3,16
 studeō,studēre,studuī,--,,"study, be eager for, be interested in DAT",2,16
-
+,,,,,,,
 alō,alere,aluī,altum/alitum,,"feed, nourish",3,17
 āmittō,āmittere,āmīsī,āmissum,,lose,3,17
 corripiō,corripere,corripuī,correptum,,"seize, engulf",3io,17
@@ -102,14 +102,14 @@ dēvastō,dēvastāre,dēvastāvī,dēvastātum,,devastate,1,17
 exstinguō,exstinguere,exstīnxī,exstīnctum,,extinguish,3,17
 iaciō,iacere,iēcī,iactum,,throw,3io,17
 temptō,temptāre,temptāvī,temptātum,,try,1,17
-
+,,,,,,,
 colō,colere,coluī,cultum,,"worship, cultivate",3,18
 dormiō,dormīre,dormīvī,dormītum,,sleep,4,18
 excitō,excitāre,excitāvī,excitātum,,"awaken, wake up, rouse, stir up",1,18
 exclāmō,exclāmāre,exclāmāvī,exclāmātum,,exclaim,1,18
 occultō,occultāre,occultāvī,occultātum,,hide,1,18
 quaerō,quaerere,quaesīvī,quaesītum,,"look for, search",3,18
-
+,,,,,,,
 coquō,coquere,coxī,coctum,,cook,3,19
 crēscō,crēscere,crēvī,--,,grow,3,19
 sānō,sānāre,sānāvī,sānātum,,heal,1,19
@@ -117,13 +117,13 @@ sedeō,sēdēre,sēdī,sessum,,sit,2,19
 terō,terere,trīvī,trītum,,"wear out, rub",3,19
 vīvō,vīvere,vīxī,vīctum,,live,3,19
 vulnerō,vulnerāre,vulnerāvī,vulnerātum,,wound,1,19
-
+,,,,,,,
 abundō,abundāre,abundāvī,abundātum,,abound with ABL,1,20
 dēlectō,dēlectāre,dēlectāvī,dēlectātum,,"delight, please",1,20
 egeō,egēre,eguī,--,,lack ABL,2,20
 lūdō,lūdere,lūsī,lūsum,,play,3,20
 pūniō,pūnīre,pūnīvī,pūnītum,,punish,4,20
-
+,,,,,,,
 accipiō,accipere,accēpī,acceptum,,"accept, receive",3io,21
 accūsō,accūsāre,accūsāvī,accūsātum,,accuse ACC of GEN,1,21
 dēscendō,dēscendere,dēscendī,dēscēnsum,,descend,3,21
@@ -135,22 +135,22 @@ recipiō,recipere,recēpī,receptum,,"take back; receive",3io,21
 reprehendō,reprehendere,reprehendī,reprehēnsum,,"blame, rebuke",3,21
 tollō,tollere,sustulī,sublātum,,"lift up, raise; destroy",3,21
 versō,versāre,versāvī,versātum,,turn,1,21
-
+,,,,,,,
 aspiciō,aspicere,aspexī,aspectum,,"look at, catch a glimpse of",3io,22
 gignō,gignere,genuī,genitum,,"produce, give birth",3,22
 inveniō,invenīre,invēnī,inventum,,"come upon, find",4,22
 occupō,occupāre,occupāvī,occupātum,,occupy,1,22
 prōmittō,prōmittere,prōmīsī,prōmissum,,promise,3,22
-
+,,,,,,,
 sinō,sinere,sīvī,situm,,allow ACC to INF,3,23
 valeō,valēre,valuī,--,,"be able to INF; be in good health",2,23
-
+,,,,,,,
 discō,discere,didicī,--,,learn,3,24
 iungō,iungere,iūnxī,iūnctum,,join,3,24
 pariō,parere,peperī,partum,,give birth to,3io,24
 perdō,perdere,perdidī,perditum,,"lose, waste",3,24
 scrībō,scrībere,scrīpsī,scrīptum,,write,3,24
-
+,,,,,,,
 aperiō,aperīre,aperuī,apertum,,open,4,25
 coepī,coepisse,coeptum,,,begin INF,irregular,25
 dēfendō,dēfendere,dēfendī,dēfēnsum,,defend,3,25

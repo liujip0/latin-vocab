@@ -1,5 +1,5 @@
 latin_form    , pn_type      , pn_gender, pn_person, pn_number, pn_case   , chapter
-
+,,,,,,
 ego           , personal     , N/A      , 1st      , singular , nominative,       3
 meī           , personal     , N/A      , 1st      , singular , genitive  ,      12
 mihi          , personal     , N/A      , 1st      , singular , dative    ,      12
@@ -10,7 +10,7 @@ nostrum/nostrī, personal     , N/A      , 1st      , plural   , genitive  ,    
 nōbīs         , personal     , N/A      , 1st      , plural   , dative    ,      12
 nōs           , personal     , N/A      , 1st      , plural   , accusative,      12
 nōbīs         , personal     , N/A      , 1st      , plural   , ablative  ,      12
-
+,,,,,,
 tū            , personal     , N/A      , 2nd      , singular , nominative,       3
 tuī           , personal     , N/A      , 2nd      , singular , genitive  ,      12
 tibi          , personal     , N/A      , 2nd      , singular , dative    ,      12
@@ -21,7 +21,7 @@ vestrum/vestrī, personal     , N/A      , 2nd      , plural   , genitive  ,    
 vōbīs         , personal     , N/A      , 2nd      , plural   , dative    ,      12
 vōs           , personal     , N/A      , 2nd      , plural   , accusative,      12
 vōbīs         , personal     , N/A      , 2nd      , plural   , ablative  ,      12
-
+,,,,,,
 is            , personal     , masculine, 3rd      , singular , nominative,      12
 eius          , personal     , masculine, 3rd      , singular , genitive  ,      12
 eī            , personal     , masculine, 3rd      , singular , dative    ,      12
@@ -32,7 +32,7 @@ eōrum         , personal     , masculine, 3rd      , plural   , genitive  ,    
 eīs/iīs       , personal     , masculine, 3rd      , plural   , dative    ,      12
 eōs           , personal     , masculine, 3rd      , plural   , accusative,      12
 eīs/iīs       , personal     , masculine, 3rd      , plural   , ablative  ,      12
-
+,,,,,,
 ea            , personal     , feminine , 3rd      , singular , nominative,      12
 eius          , personal     , feminine , 3rd      , singular , genitive  ,      12
 eī            , personal     , feminine , 3rd      , singular , dative    ,      12
@@ -43,7 +43,7 @@ eārum         , personal     , feminine , 3rd      , plural   , genitive  ,    
 eīs/iīs       , personal     , feminine , 3rd      , plural   , dative    ,      12
 eās           , personal     , feminine , 3rd      , plural   , accusative,      12
 eīs/iīs       , personal     , feminine , 3rd      , plural   , ablative  ,      12
-
+,,,,,,
 id            , personal     , neuter   , 3rd      , singular , nominative,      12
 eius          , personal     , neuter   , 3rd      , singular , genitive  ,      12
 eī            , personal     , neuter   , 3rd      , singular , dative    ,      12
@@ -54,7 +54,7 @@ eōrum         , personal     , neuter   , 3rd      , plural   , genitive  ,    
 eīs/iīs       , personal     , neuter   , 3rd      , plural   , dative    ,      12
 ea            , personal     , neuter   , 3rd      , plural   , accusative,      12
 eīs/iīs       , personal     , neuter   , 3rd      , plural   , ablative  ,      12
-
+,,,,,,
 quī           , relative     , masculine, N/A      , singular , nominative,      14
 cūius         , relative     , masculine, N/A      , singular , genitive  ,      14
 cui           , relative     , masculine, N/A      , singular , dative    ,      14
@@ -65,7 +65,7 @@ quōrum        , relative     , masculine, N/A      , plural   , genitive  ,    
 quibus        , relative     , masculine, N/A      , plural   , dative    ,      14
 quōs          , relative     , masculine, N/A      , plural   , accusative,      14
 quibus        , relative     , masculine, N/A      , plural   , ablative  ,      14
-
+,,,,,,
 quae          , relative     , feminine , N/A      , singular , nominative,      14
 cūius         , relative     , feminine , N/A      , singular , genitive  ,      14
 cui           , relative     , feminine , N/A      , singular , dative    ,      14
@@ -76,7 +76,7 @@ quārum        , relative     , feminine , N/A      , plural   , genitive  ,    
 quibus        , relative     , feminine , N/A      , plural   , dative    ,      14
 quās          , relative     , feminine , N/A      , plural   , accusative,      14
 quibus        , relative     , feminine , N/A      , plural   , ablative  ,      14
-
+,,,,,,
 quod          , relative     , neuter   , N/A      , singular , nominative,      14
 cūius         , relative     , neuter   , N/A      , singular , genitive  ,      14
 cui           , relative     , neuter   , N/A      , singular , dative    ,      14
@@ -87,7 +87,7 @@ quōrum        , relative     , neuter   , N/A      , plural   , genitive  ,    
 quibus        , relative     , neuter   , N/A      , plural   , dative    ,      14
 quae          , relative     , neuter   , N/A      , plural   , accusative,      14
 quibus        , relative     , neuter   , N/A      , plural   , ablative  ,      14
-
+,,,,,,
 quis          , interrogative, masculine, N/A      , singular , nominative,      15
 cūius         , interrogative, masculine, N/A      , singular , genitive  ,      15
 cui           , interrogative, masculine, N/A      , singular , dative    ,      15
@@ -98,7 +98,7 @@ quōrum        , interrogative, masculine, N/A      , plural   , genitive  ,    
 quibus        , interrogative, masculine, N/A      , plural   , dative    ,      15
 quōs          , interrogative, masculine, N/A      , plural   , accusative,      15
 quibus        , interrogative, masculine, N/A      , plural   , ablative  ,      15
-
+,,,,,,
 quis          , interrogative, feminine , N/A      , singular , nominative,      15
 cūius         , interrogative, feminine , N/A      , singular , genitive  ,      15
 cui           , interrogative, feminine , N/A      , singular , dative    ,      15
@@ -109,7 +109,7 @@ quārum        , interrogative, feminine , N/A      , plural   , genitive  ,    
 quibus        , interrogative, feminine , N/A      , plural   , dative    ,      15
 quās          , interrogative, feminine , N/A      , plural   , accusative,      15
 quibus        , interrogative, feminine , N/A      , plural   , ablative  ,      15
-
+,,,,,,
 quid          , interrogative, neuter   , N/A      , singular , nominative,      15
 cūius         , interrogative, neuter   , N/A      , singular , genitive  ,      15
 cui           , interrogative, neuter   , N/A      , singular , dative    ,      15
@@ -120,7 +120,7 @@ quōrum        , interrogative, neuter   , N/A      , plural   , genitive  ,    
 quibus        , interrogative, neuter   , N/A      , plural   , dative    ,      15
 quae          , interrogative, neuter   , N/A      , plural   , accusative,      15
 quibus        , interrogative, neuter   , N/A      , plural   , ablative  ,      15
-
+,,,,,,
 hic           , demonstrative, masculine, N/A      , singular , nominative,      19
 huius         , demonstrative, masculine, N/A      , singular , genitive  ,      19
 huic          , demonstrative, masculine, N/A      , singular , dative    ,      19
@@ -131,7 +131,7 @@ hōrum         , demonstrative, masculine, N/A      , plural   , genitive  ,    
 hīs           , demonstrative, masculine, N/A      , plural   , dative    ,      19
 hōs           , demonstrative, masculine, N/A      , plural   , accusative,      19
 hīs           , demonstrative, masculine, N/A      , plural   , ablative  ,      19
-
+,,,,,,
 haec          , demonstrative, feminine , N/A      , singular , nominative,      19
 huius         , demonstrative, feminine , N/A      , singular , genitive  ,      19
 huic          , demonstrative, feminine , N/A      , singular , dative    ,      19
@@ -142,7 +142,7 @@ hārum         , demonstrative, feminine , N/A      , plural   , genitive  ,    
 hīs           , demonstrative, feminine , N/A      , plural   , dative    ,      19
 hās           , demonstrative, feminine , N/A      , plural   , accusative,      19
 hīs           , demonstrative, feminine , N/A      , plural   , ablative  ,      19
-
+,,,,,,
 hoc           , demonstrative, neuter   , N/A      , singular , nominative,      19
 huius         , demonstrative, neuter   , N/A      , singular , genitive  ,      19
 huic          , demonstrative, neuter   , N/A      , singular , dative    ,      19
@@ -153,7 +153,7 @@ hōrum         , demonstrative, neuter   , N/A      , plural   , genitive  ,    
 hīs           , demonstrative, neuter   , N/A      , plural   , dative    ,      19
 haec          , demonstrative, neuter   , N/A      , plural   , accusative,      19
 hīs           , demonstrative, neuter   , N/A      , plural   , ablative  ,      19
-
+,,,,,,
 ille          , demonstrative, masculine, N/A      , singular , nominative,      20
 illīus        , demonstrative, masculine, N/A      , singular , genitive  ,      20
 illī          , demonstrative, masculine, N/A      , singular , dative    ,      20
@@ -164,7 +164,7 @@ illōrum       , demonstrative, masculine, N/A      , plural   , genitive  ,    
 illīs         , demonstrative, masculine, N/A      , plural   , dative    ,      20
 illōs         , demonstrative, masculine, N/A      , plural   , accusative,      20
 illīs         , demonstrative, masculine, N/A      , plural   , ablative  ,      20
-
+,,,,,,
 illa          , demonstrative, feminine , N/A      , singular , nominative,      20
 illīus        , demonstrative, feminine , N/A      , singular , genitive  ,      20
 illī          , demonstrative, feminine , N/A      , singular , dative    ,      20
@@ -175,7 +175,7 @@ illārum       , demonstrative, feminine , N/A      , plural   , genitive  ,    
 illīs         , demonstrative, feminine , N/A      , plural   , dative    ,      20
 illās         , demonstrative, feminine , N/A      , plural   , accusative,      20
 illīs         , demonstrative, feminine , N/A      , plural   , ablative  ,      20
-
+,,,,,,
 illud         , demonstrative, neuter   , N/A      , singular , nominative,      20
 illīus        , demonstrative, neuter   , N/A      , singular , genitive  ,      20
 illī          , demonstrative, neuter   , N/A      , singular , dative    ,      20
@@ -186,5 +186,5 @@ illōrum       , demonstrative, neuter   , N/A      , plural   , genitive  ,    
 illīs         , demonstrative, neuter   , N/A      , plural   , dative    ,      20
 illa          , demonstrative, neuter   , N/A      , plural   , accusative,      20
 illīs         , demonstrative, neuter   , N/A      , plural   , ablative  ,      20
-
+,,,,,,
 sē            , reflexive    , N/A      , 3rd      , singular , accusative,       7

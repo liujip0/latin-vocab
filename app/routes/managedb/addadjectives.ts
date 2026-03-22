@@ -17,7 +17,7 @@ export default async function addAdjectives(
   return await new Promise((resolve) => {
     Papa.parse<Omit<Adjective, "id">>(text, {
       header: true,
-      skipEmptyLines: true,
+      skipEmptyLines: "greedy",
       transformHeader: (header) => header.trim(),
       transform: (value) => value.trim(),
       complete: async (results) => {
