@@ -12,31 +12,31 @@
     "typecheck": "npm run cf-typegen && react-router typegen && tsc -b"
   },
   "dependencies": {
-    "@liujip0/components": "^0.2.25",
-    "@material-symbols/font-400": "^0.40.2",
+    "@liujip0/components": "^0.2.26",
+    "@material-symbols/font-400": "^0.42.3",
     "bcryptjs": "^3.0.3",
     "buffer": "^6.0.3",
-    "diff": "^8.0.2",
-    "isbot": "^5.1.32",
+    "diff": "^8.0.3",
+    "isbot": "^5.1.36",
     "jsonwebtoken": "^9.0.3",
     "papaparse": "^5.5.3",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "react-router": "^7.11.0"
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-router": "^7.13.1"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "^1.20.0",
-    "@react-router/dev": "^7.11.0",
-    "@tailwindcss/vite": "^4.1.18",
+    "@cloudflare/vite-plugin": "^1.30.0",
+    "@react-router/dev": "^7.13.1",
+    "@tailwindcss/vite": "^4.2.2",
     "@types/jsonwebtoken": "^9.0.10",
-    "@types/node": "^25.0.3",
+    "@types/node": "^25.5.0",
     "@types/papaparse": "^5.5.2",
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
-    "vite-tsconfig-paths": "^6.0.3",
-    "wrangler": "^4.57.0"
+    "vite-tsconfig-paths": "^6.1.1",
+    "wrangler": "^4.76.0"
   },
-  "packageManager": "pnpm@10.28.2+sha512.41872f037ad22f7348e3b1debbaf7e867cfd448f2726d9cf74c08f19507c31d2c8e7a11525b983febc2df640b5438dee6023ebb1f84ed43cc2d654d2bc326264"
+  "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be"
 }
