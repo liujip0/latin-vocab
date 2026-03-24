@@ -16,7 +16,7 @@ export default async function addPronouns(
   return await new Promise((resolve) => {
     Papa.parse<Omit<Pronoun, "id">>(text, {
       header: true,
-      skipEmptyLines: true,
+      skipEmptyLines: "greedy",
       transformHeader: (header) => header.trim(),
       transform: (value) => value.trim(),
       complete: async (results) => {

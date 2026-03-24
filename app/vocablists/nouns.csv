@@ -1,5 +1,5 @@
 nom_sg,gen_sg,other_forms,english_translation,declension,gender,chapter
-
+,,,,,,
 agricola,agricolae,,farmer,1,m,1
 aqua,aquae,,water,1,f,1
 āthlēta,āthlētae,,athlete,1,m,1
@@ -10,11 +10,11 @@ poēta,poētae,,poet,1,m,1
 puella,puellae,,girl,1,f,1
 Rōma,Rōmae,,Rome,1,f,1
 terra,terrae,,land,1,f,1
-
+,,,,,,
 fābula,fābulae,,story,1,f,2
 fōrma,fōrmae,,"form, appearance",1,f,2
 patria,patriae,,fatherland,1,f,2
-
+,,,,,,
 ager,agrī,,field,2,m,3
 amīcus,amīcī,,friend,2,m,3
 animus,animī,,"spirit, soul, mind",2,m,3
@@ -24,21 +24,21 @@ puer,puerī,,boy,2,m,3
 rīvus,rīvī,,"brook, stream",2,m,3
 via,viae,,road,1,f,3
 vir,virī,,man,2,m,3
-
+,,,,,,
 bellum,bellī,,war,2,n,4
 castra,castrōrum,,camp,2,n,4
 dolus,dolī,,"trickery, deception",2,m,4
 praemium,praemiī,,reward,2,n,4
 venēnum,venēnī,,poison,2,n,4
 vinculum,vinculī,,"chain, fetter",2,n,4
-
+,,,,,,
 auxilium,auxiliī,,help,2,n,5
 cōnsilium,cōnsiliī,,"plan, advice",2,n,5
 epistula,epistulae,,letter,1,f,5
 familia,familiae,,"family, household",1,f,5
 gaudium,gaudiī,,joy,2,n,5
 lacrima,lacrimae,,tear,1,f,5
-
+,,,,,,
 exemplum,exemplī,,example,2,n,6
 liber,librī,,book,2,m,6
 littera,litterae,,letter of the alphabet,1,f,6
@@ -46,7 +46,7 @@ litterae,litterārum,,"literature, letter, epistle",1,f,6
 memoria,memoriae,,memory,1,f,6
 tenebrae,tenebrārum,,"shadows, darkness",1,f,6
 vīta,vītae,,life,1,f,6
-
+,,,,,,
 amor,amōris,,love,3,m,7
 dēliciae,dēliciārum,,"delight, pet",1,f,7
 digitus,digitī,,finger,2,m,7
@@ -57,7 +57,7 @@ passer,passeris,,sparrow,3,m,7
 senex,senis,,old man,3,m,7
 soror,sorōris,,sister,3,f,7
 verbum,verbī,,word,2,n,7
-
+,,,,,,
 dux,ducis,,"leader, general",3,m,8
 fortitūdō,fortitūdinis,,courage,3,f,8
 homō,hominis,,"man, human being",3,m,8
@@ -67,7 +67,7 @@ mīles,mīlitis,,soldier,3,m,8
 rēx,rēgis,,king,3,m,8
 templum,templī,,temple,2,n,8
 timor,timōris,,fear,3,m,8
-
+,,,,,,
 animal,animālis,,animal,3,n,9
 arma,armōrum,,weapons,2,n,9
 caput,capitis,,head,3,n,9
@@ -83,7 +83,7 @@ mulier,mulieris,,woman,3,f,9
 pāx,pācis,,peace,3,f,9
 tempus,temporis,,time,3,n,9
 urbs,urbis,,city,3,f,9
-
+,,,,,,
 deus,deī,,god,2,m,10
 dōnum,dōnī,,gift,2,n,10
 equus,equī,,horse,2,m,10
@@ -91,21 +91,21 @@ flamma,flammae,,flame,1,f,10
 hostis,hostis,,enemy,3,m,10
 nox,noctis,,night,3,f,10
 perīculum,perīculī,,danger,2,n,10
-
+,,,,,,
 dolor,dolōris,,"grief, pain",3,m,11
 rēgīna,rēgīnae,,queen,1,f,11
 silva,silvae,,forest,1,f,11
 spēlunca,spēluncae,,cave,1,f,11
 tempestās,tempestātis,,storm,3,f,11
-
+,,,,,,
 dextra,dextrae,,right hand,1,f,12
 ignis,ignis,,fire,3,m,12
 īra,īrae,,anger,1,f,12
 nōmen,nōminis,,name,3,n,12
 vīs,--,,"force, strength",irregular,f,12
-
+,,,,,,
 iūdex,iūdicis,,judge,3,m,13
-
+,,,,,,
 arbor,arboris,,tree,3,f,14
 gladius,gladiī,,sword,2,m,14
 odium,odiī,,hatred,2,n,14
@@ -114,12 +114,12 @@ parēns,parentis,,parent,3,m,14
 parēns,parentis,,parent,3,f,14
 pectus,pectoris,,chest,3,n,14
 sanguis,sanguinis,,blood,3,m,14
-
+,,,,,,
 argūmentum,argūmentī,,"proof, indication, argument",2,n,15
 saxum,saxī,,"stone, rock",2,n,15
 senectūs,senectūtis,,old age,3,f,15
 vīlla,vīllae,,"country house, villa",1,f,15
-
+,,,,,,
 avunculus,avunculī,,uncle,2,m,16
 caelum,caelī,,"sky, heaven, weather",2,n,16
 causa,causae,,"cause, reason",1,f,16
@@ -135,7 +135,7 @@ mōns,montis,,mountain,3,m,16
 nāvis,nāvis,,ship,3,f,16
 nūbēs,nūbis,,cloud,3,f,16
 pars,partis,,part,3,f,16
-
+,,,,,,
 cornū,cornūs,,horn,4,n,17
 dormus,dormūs,,"house, home",4,f,17
 imperātor,imperātōris,,"general, emperor",3,m,17
@@ -149,7 +149,7 @@ manus,manūs,,hand,4,f,17
 mūrus,mūrī,,wall,2,m,17
 tumultus,tumultūs,,"uproar, confusion",4,m,17
 ventus,ventī,,wind,2,m,17
-
+,,,,,,
 dea,deae,,goddess,1,f,18
 diēs,diēī,,day,5,m,18
 diēs,diēī,,day,5,f,18
@@ -161,7 +161,7 @@ pater,patris,,father,3,m,18
 rēs,reī,,"thing, matter",5,f,18
 somnus,somnī,,sleep,2,m,18
 uxor,uxoris,,wife,3,f,18
-
+,,,,,,
 barba,barbae,,beard,1,f,19
 carō,carnis,,"meat, flesh",3,f,19
 herba,herbae,,"plant, vegetation",1,f,19
@@ -170,7 +170,7 @@ proelium,proeliī,,"battle, combat",2,n,19
 vestīmentum,vestīmentī,,garment,2,n,19
 vestīmentī,vestīmentōrum,,clothes,2,n,19
 vulnus,vulneris,,wound,3,n,19
-
+,,,,,,
 adulēscēns,adulēscentis,,young man,3,m,20
 adulēscēns,adulēscentis,,young lady,3,f,20
 cor,cordis,,heart,3,n,20
@@ -179,14 +179,14 @@ fūrtum,fūrtī,,theft,2,n,20
 inīquitās,inīquitātis,,"injustice, mischief",3,f,20
 lēx,lēgis,,law,3,f,20
 pōmum,pōmī,,fruit,2,n,20
-
+,,,,,,
 axis,axis,,"axle, axis",3,m,21
 cōnstantia,cōnstantiae,,constancy,1,f,21
 dīvitiae,dīvitiārum,,"wealth, riches",1,f,21
 fortūna,fortūnae,,"fortune, the goddess Fortune",1,f,21
 honor,honōris,,"honor, public office or distinction",3,m,21
 rota,rotae,,wheel,1,f,21
-
+,,,,,,
 gēns,gentis,,"tribe, population",3,f,22
 incola,incolae,,inhabitant,1,m,22
 īnsula,īnsulae,,island,1,f,22
@@ -196,7 +196,7 @@ mundus,mundī,,world,2,m,22
 ortus,ortūs,,"rising, beginning, origin",4,m,22
 piscis,piscis,,fish,3,m,22
 sōl,sōlis,,sun,3,m,22
-
+,,,,,,
 annus,annī,,year,2,m,23
 argentum,argentī,,silver,2,n,23
 aurum,aurī,,gold,2,n,23
@@ -207,7 +207,7 @@ līs,lītis,,"dispute, quarrel",3,f,23
 vestis,vestis,,"clothes, attire",3,f,23
 vōx,vōcis,,voice,3,f,23
 vultus,vultūs,,face,4,m,23
-
+,,,,,,
 coniūnx,coniungis,,spouse,3,m,24
 coniūnx,coniungis,,spouse,3,f,24
 discipula,discipulae,,female student,1,f,24
@@ -217,12 +217,12 @@ frāter,frātris,,brother,3,m,24
 magister,magistrī,,male teacher,2,m,24
 mātrimōnium,matrimōniī,,marriage,2,n,24
 salūs,salūtis,,"health, welfare",3,f,24
-
+,,,,,,
 agmen,agminis,,marching column,3,n,25
 pōns,pontis,,bridge,3,m,25
 porta,portae,,gate,1,f,25
 victor,victōris,,victor,3,m,25
-
+,,,,,,
 carmen,carminis,,"poem, song",3,n,26
 cibus,cibī,,food,2,m,26
 flūmen,flūminis,,river,3,n,26
@@ -232,3 +232,10 @@ mēns,mentis,,"mind, spirit",3,f,26
 vīnum,vīnī,,wine,2,n,26
 virtūs,virtūtis,,"virtue, courage",3,f,26
 vitium,vitiī,,vice,2,n,26
+,,,,,,
+exercitus,exercitūs,,army,4,m,27
+hērēs,hērēdis,,heir,3,m,27
+hērēs,hērēdis,,heir,3,f,27
+imperium,imperiī,,"rule, power, empire",2,n,27
+inopia,inopiae,,"want, helplessness",1,f,27
+nēmō,nūllīus,"nēminī,nēminem,nūllō",no one,irregular,m,27

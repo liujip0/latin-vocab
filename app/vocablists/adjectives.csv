@@ -1,5 +1,5 @@
 latin_form1,latin_form2,latin_form3,english_translation,declension,chapter
-
+,,,,,
 armātus,armāta,armātum,armed,1,4
 bonus,bona,bonum,good,1,4
 iūstus,iūsta,iūstum,just,1,4
@@ -7,83 +7,88 @@ magnus,magna,magnum,"large, great, important",1,4
 malus,mala,malum,bad,1,4
 praeclārus,praeclāra,praeclārum,"famous, distinguished",1,4
 Rōmānus,Rōmāna,Rōmānum,Roman,1,4
-
+,,,,,
 longus,longa,longum,long,1,4
 miser,misera,miserum,"wretched, sad, miserable",1,4
 pulcher,pulchra,pulchrum,"beautiful, nice",1,4
-
+,,,,,
 multus,multa,multum,"much, many",1,6
-
+,,,,,
 meus,mea,meum,my,1,7
 sevērus,sevēra,sevērum,"serious, strict, severe",1,7
-
+,,,,,
 ācer,ācris,ācre,"keen, fierce",33,10
 celeber,celebris,celebre,"renowned, well-known, crowded",33,10
 fēlīx,fēlīcis,,"fortunate, happy",31,10
 fortis,forte,,"brave, strong",32,10
 paucī,paucae,pauca,few,1,10
-
+,,,,,
 crūdēlis,crūdēle,,cruel,32,11
 novus,nova,novum,new,1,11
-
+,,,,,
 noster,nostra,nostrum,our,1,12
 similis,simile,,"like GEN/DAT",32,12
 tantus,tanta,tantum,so great,1,12
 tuus,tua,tuum,"your, yours (sg.)",1,12
 vester,vestra,vestrum,"your, yours (pl.)",1,12
-
+,,,,,
 alius,alia,aliud,"another, other",1,13
 dīves,dīvitis,,rich,31,13
 doctus,docta,doctum,learned,1,13
 omnis,omne,,"each, every, all",32,13
 suus,sua,suum,"his, her, its, their",1,13
-
+,,,,,
 albus,alba,album,white,1,14
 prīmus,prīma,prīmum,first,1,14
 ruber,rubra,rubrum,red,1,14
-
+,,,,,
 difficilis,difficile,,difficult,32,15
 parvus,parva,parvum,small,1,15
 quī,quae,quod,"what, which",irregular,15
 rūsticus,rūstica,rūsticum,"rural, rustic",1,15
 vērus,vēra,vērum,true,1,15
 vetustus,vetusta,vetustum,old,1,15
-
+,,,,,
 fūnestus,fūnesta,fūnestum,deadly,1,16
-
+,,,,,
 ferōx,ferōcis,,"fierce, ferocious",31,19
 terribilis,terribile,,terrible,32,19
-
+,,,,,
 aequus,aequa,aequum,even,1,20
 dīvīnus,dīvīna,dīvīnum,divine,1,20
 hūmānus,hūmāna,hūmānum,human,1,20
 pauper,pauperis,,"poor",31,20
 plēnus,plēna,plēnum,full of GEN/ABL,1,20
-
+,,,,,
 aliēnus,aliēna,aliēnum,"foreign to, inconsistent with ā/ab ABL",1,21
 externus,externa,externum,"outward, external",1,21
 futūrus,futūra,futūrum,about to be,1,21
 ūllus,ūlla,ūllum,any,1,21
-
+,,,,,
 septentriōnālis,septentriōnale,,northern,32,22
 situs,sita,situm,"situated, located",1,22
-
+,,,,,
 altus,alta,altum,"tall, deep",1,23
 brevis,breve,,short,32,23
 clārus,clāra,clārum,"clear, distinguished",1,23
 gravis,grave,,"heavy, serious",32,23
-
+,,,,,
 improbus,improba,improbum,"bad, wicked",1,24
-
+,,,,,
 ingēns,ingentis,,huge,31,25
 ligneus,lignea,ligneum,made of wood,1,25
 quantus,quanta,quantum,"how much, how great",1,25
 tūtus,tūta,tūtum,safe,1,25
 vacuus,vacua,vacuum,empty of ABL,1,25
-
+,,,,,
 dulcis,dulce,,sweet,32,26
 immemor,immemoris,,forgetful of GEN,31,26
 levis,leve,,light,32,26
 proximus,proxima,proximum,nearest,1,26
 vehemēns,vehementis,,"violent, vehement",31,26
 vetus,veteris,,old,31,26
+,,,,,
+fidēlis,fidēle,,"faithful, loyal",32,27
+secundus,secunda,secundum,second,1,27
+tertius,tertia,tertium,third,1,27
+trīstis,trīste,,sad,32,27
