@@ -36,7 +36,7 @@ alius,alia,aliud,"another, other",1,13
 dīves,dīvitis,,rich,31,13
 doctus,docta,doctum,learned,1,13
 omnis,omne,,"each, every, all",32,13
-suus,sua,suum,"his, her, its, their",1,13
+suus,sua,suum,"his, her, its, their own",1,13
 ,,,,,
 albus,alba,album,white,1,14
 prīmus,prīma,prīmum,first,1,14
@@ -120,6 +120,14 @@ dissimilis,dissimile,,dissimilar,32,30
 facilis,facile,,easy,32,30
 gracilis,gracile,,slender,32,30
 humilis,humile,,"low, humble",32,30
+,,,,,
+iūcundus,iūcunda,iūcundum,"pleasant, nice",1,31
+līber,lībera,līberum,free,1,31
+maritimus,maritima,maritimum,maritime,1,31
+placidus,placida,placidum,"peaceful, calm",1,31
+prosper,prospera,prosperum,"fortunate, prosperous",1,31
+scelestus,scelesta,scelestum,wicked,1,31
+serēnus,serēna,serēnum,"calm, clear",1,31
 ,,,,,
 alter,altera,alterum,the other (of two),1,32
 neuter,neutra,neutrum,"neither, none (of two)",1,32
